@@ -1,0 +1,79 @@
+button:focus,
+input:focus, 
+textarea {
+	outline: 0;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+input[type="password"],
+input[type="checkbox"] {
+	border-radius: 0;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+input[type="password"], 
+textarea {
+	width: 100%;
+	padding: 12px 18px;
+	border: 1px solid #C5C5C5;
+	font-size: 14px;
+	color: #111;
+	resize: vertical;
+
+	&:focus {
+		border-color: #666;
+	}
+}
+textarea {
+	min-height: 150px;
+}
+
+.label-required {
+	position: relative;
+
+	&:after {
+		content: '*';
+		position: absolute;
+		top: -7px;
+		right: -12px;
+		font-size: 18px;
+		color: #FF0000;
+		text-shadow: none;
+	}
+}
+
+// CUSTOM BUTTONS STYLES
+.buttons {
+	.btn + .btn {
+		@include rem(margin-left, 25px);
+	}
+}
+.btn {
+	$button-color: $bg-orange-color;
+	padding: 11px 25px;
+	// @include rem(padding, 11px 25px);
+	background-color: $button-color;
+	border: 3px solid $button-color;
+	font-family: 'R-700';
+	font-size: 15px;
+	// @include fz(15px);
+	color: #fff;
+	transition: background-color .3s ease;
+
+	&:hover {
+		background-color: lighten($button-color, 10%);
+	}
+
+	@include additional-colors($color-light-green, green);
+	@include additional-colors($color-gray, gray);
+	@include additional-colors($color-light-gray-2, light-gray);
+	@include additional-colors($color-light-blue, blue);
+}
+
+@include customInput();
+@include customInput($type: radio, $x: 17px, $y: 17px);
+
