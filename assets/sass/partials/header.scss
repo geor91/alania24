@@ -1,0 +1,140 @@
+// header styles
+header {
+	@include font-family(hn);
+	color: #444;
+
+	.col {
+		position: relative;
+		padding: 0 15px;
+		vertical-align: bottom;
+		font-size: 14px;
+
+		&:first-child {
+			width: 21%;
+			padding-left: 0;
+		}
+		&:last-child {
+			width: 21%;
+			padding-right: 0;
+		}
+		& > div {
+			padding-bottom: 8px;
+			border-bottom: 4px solid rgba(0,0,0, .15);			
+		}
+	}
+	.weather-block {
+		.city-name {
+			color: #9B9B9B;
+		}
+		.city-temp {
+			@include color($color-green);
+		}
+	}
+	.currencies {
+		position: absolute;
+		top: 100%;
+		padding-top: 15px;
+
+		.item {
+			display: inline-block;
+			& + .item {
+				margin-left: 10px;
+			}
+		}
+
+		.fa {
+			margin-right: 5px;
+			&.fa-usd {
+				@include color($color-green);
+			}
+			&.fa-euro {
+				@include color($color-blue);
+			}
+		}
+	}
+	.hot-news {
+		text-align: center;
+	}
+	.auth-block {
+		text-align: right;
+		& > a {
+			display: inline-block;
+			position: relative;
+			font-size: 16px;
+
+			i.fa {
+				margin-right: 7px;
+			}
+
+			& + a {
+				margin-left: 10px;
+				padding-left: 10px;
+
+				&:before {
+					content: '|';
+					position: absolute;
+					top: 0;
+					left: 0;
+				}
+			}
+		}
+	}
+	.logo {
+		display: block;
+		padding: 50px 0 40px;
+		border-bottom: 8px solid $color-blue-2;
+		text-align: center;
+		img {
+			@include rem(max-width, 376px);
+		}
+	}
+}
+.top-nav {
+	margin: 2px 0;
+	border-top: 1px solid rgba(0,0,0, .15);
+	border-bottom: 1px solid rgba(0,0,0, .15);
+	text-align: center;
+	white-space: nowrap;
+
+	ul {
+		font-size: 0;
+	}
+	
+	li {
+		display: inline-block;
+
+		a {
+			position: relative;
+			display: inline-block;
+			padding: 11px 10px;
+			padding: 11px 1rem;
+			border-bottom: 2px solid transparent;
+			@include font-family(hb);
+			@include font-size(19px);
+			color: $color-blue;
+			transition: color .3s;
+
+			&:before {
+				content: '';
+				position: absolute;
+				top: -11px;
+				left: 0;
+				right: 0;
+				height: 8px;
+				background: #233C54;
+				opacity: 0;
+				transition: opacity .3s;
+			}
+
+			&:hover {
+				color: darken($color-blue, 5%);
+				color: #233C54;
+				text-decoration: none;
+
+				&:before {
+					opacity: 1;
+				}
+			}
+		}
+	}
+}

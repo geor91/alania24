@@ -1,148 +1,58 @@
-// GLOBAL VARS
-	$aside-width		: 250px;
-	$header-height		: 80px;
-	$base-font-size		: 16px;
-	$base-padding		: 30px;
+// font-face shortcut
+@mixin font-face ($font-name, $file-name) {
+	@font-face {
+		font-family: $font-name;
+		src: url('../fonts/#{$file-name}/font.eot');
+		src: url('../fonts/#{$file-name}/font.eot') format('embedded-opentype'),
+			 url('../fonts/#{$file-name}/font.woff') format('woff'),
+			 url('../fonts/#{$file-name}/font.ttf') format('truetype');
+	}
+}
 
-// COLORS
-	// bg colors
-	$bg-dark-color		: #21282E;
-	$bg-yellow-color	: #FED700;
-	$bg-orange-color	: #FF4933;
+// REM UNIVERSAL MIXIN (with fallbacks)
+	@mixin rem($property, $values) {
+		$font-size: $base-font-size;
+		$px-values: ();
+		$rem-values: ();
 
-	// font colors
-	$color-light-white	: #F6F6F6;
-	$color-light-black	: #1F262C;
-	$color-gray			: #9E9E9E;
-	$color-light-gray	: #DDD;
-	$color-light-gray-2	: #B8B8B8;
-	$color-light-blue	: #00B3D3;
-	$color-light-blue-2	: #00BFFF;
-	$color-light-green	: #BBCC29;
-	$color-green		: #008C23;
-	$color-dark-red		: #993300;
-	$color-red			: #D80000;
-	$color-orange		: #FF4000;
-
-// MIXINS
-	// background shortcut
-		@mixin bg ($filename, $bgcolor: null, $pos: 0 0, $repeat:no-repeat) {
-			background: $bgcolor url('../../assets/images/' + $filename) $pos $repeat;
-		}
-
-	// css gradient shortcut
-		@mixin gradient ($img, $from, $to, $pos: 0 0, $repeat: repeat) {
-			background-image: radial-gradient(circle at center, $from 0%, $to 100%), url('../../assets/images/' + $img);
-			background-repeat: $repeat;
-			background-position: $pos;
-		}
-
-	// REM UNIVERSAL MIXIN (with fallbacks)
-		@mixin rem($property, $values) {
-			$font-size: $base-font-size;
-			$px-values: ();
-			$rem-values: ();
-
-			@each $value in $values {
-				@if $value == 0 or $value == 0px {
-					$px-values: join($px-values, 0);
-					$rem-values: join($rem-values, 0);
-				} @else if type-of($value) == number and not unitless($value) and (unit($value) == px) {
-					$new-rem-value: $value / $font-size;
-					$px-values: join($px-values, round($value));
-					$rem-values: join($rem-values, #{$new-rem-value}rem);
-				} @else if type-of($value) == number and not unitless($value) and (unit($value) == "%") {
-					$px-values: join($px-values, #{$value});
-					$rem-values: join($rem-values, #{$value});
-				} @else if $value == auto {
-					$px-values: join($px-values, auto);
-					$rem-values: join($rem-values, auto);
-				} @else {
-					$px-values: join($px-values, round($value * $font-size));
-					$rem-values: join($rem-values, #{$value}rem);
-				}
-			}
-			#{$property}: $px-values;
-			#{$property}: $rem-values;
-		}
-			@mixin fz($fz) {
-				@include rem(font-size, $fz);
-			}
-
-	// additional colors for buttons
-		@mixin additional-colors ($color-value, $color-name) {
-			&.btn-#{$color-name} {
-				background-color: $color-value;
-				border-color: $color-value;
-				&:hover {
-					background-color: lighten($color-value, 10%);
-				}
+		@each $value in $values {
+			@if $value == 0 or $value == 0px {
+				$px-values: join($px-values, 0);
+				$rem-values: join($rem-values, 0);
+			} @else if type-of($value) == number and not unitless($value) and (unit($value) == px) {
+				$new-rem-value: $value / $font-size;
+				$px-values: join($px-values, round($value));
+				$rem-values: join($rem-values, #{$new-rem-value}rem);
+			} @else if type-of($value) == number and not unitless($value) and (unit($value) == "%") {
+				$px-values: join($px-values, #{$value});
+				$rem-values: join($rem-values, #{$value});
+			} @else if $value == auto {
+				$px-values: join($px-values, auto);
+				$rem-values: join($rem-values, auto);
+			} @else {
+				$px-values: join($px-values, round($value * $font-size));
+				$rem-values: join($rem-values, #{$value}rem);
 			}
 		}
-	
-	// CUSTOM CHECKBOX & RADIO STYLES
-		@mixin customInput ($type: checkbox, $x: 14px, $y: 14px) {
-			.#{$type} {
-				position: relative;
-				overflow: hidden;
-
-				label {
-					font-family: inherit;
-					font-size: inherit;
-				}
-
-				input[type="#{$type}"] {
-					position: absolute;
-					top: 50%;
-					left: 1px;
-					width: $x/1 -2;
-					height: $y/1-2;
-					margin-top: -$y/2;
-				}
-				div, span {
-					display: inline-block;
-					position: relative;
-					padding-left: 30px;
-					min-height: $y;
-					font-size: inherit;
-					font-family: inherit;
-					color: $color-light-black;
-					cursor: pointer;
-
-					&:after {
-						content: '';
-						display: block;
-						position: absolute;
-						top: 50%;
-						left: 0;
-						width: $x;
-						height: $y;
-						margin-top: -$y/2;
-						@include bg($filename: 'bg/bg-#{$type}.png');
-					}
-				}
-				input[type="#{$type}"]:checked ~ div:after,
-				input[type="#{$type}"]:checked ~ span:after {
-					background-position: 0 bottom;
-				}
-				b {
-					display: inline-block;
-					position: absolute;
-					top: 3px; right: 0;
-					font-weight: normal;
-					font-size: 16px;
-					color: $color-light-black;
-				}
-			}
-			.#{$type}-group {
-				li {
-					label {
-						display: inline-block;
-						position: relative;
-					}
-				}
-				.#{$type}, li {
-					margin-bottom: 8px;
-				}
-			}
+		#{$property}: $px-values;
+		#{$property}: $rem-values;
+	}
+		// font-size shortcut based on rem mixin
+		@mixin font-size($fz) {
+			@include rem(font-size, $fz);
 		}
+
+// CUSTOM COLOR MIXIN
+	@mixin color($color) {
+		color: $color;
+	}
+
+// FONT-FAMILY MIXIN
+	@mixin font-family($font-name) {
+		font-family: $font-name, arial, serif;
+	}
+
+// to percent
+	@function calc-percent($target, $container) {
+		@return ($target / $container) * 100%;
+	}

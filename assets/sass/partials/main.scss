@@ -1,0 +1,92 @@
+// common styles
+.page-wrap {
+	max-width: 1200px;
+	min-height: 100%;
+	margin: 0 auto;
+	margin-bottom: -$footer-height;
+	padding-top: 100px;
+
+	&:after {
+		content: "";
+		display: block;
+		height: $footer-height;
+	}
+}
+
+.page-container {
+	padding: 25px 0;
+	border-top: 2px solid #000;
+	border-bottom: 1px solid rgba(0,0,0, .15);
+	@extend .clrfix;
+	@extend .wrap;
+}
+.page-content {
+	width: 70%;
+	@extend .wrap;
+}
+
+.post {
+	.post-image {
+		margin-bottom: 14px;
+		img {
+			width: 100%;
+		}
+	}
+	.post-date {
+		margin-bottom: 9px;
+		@include font-family(hn);
+		font-size: 9px;
+		line-height: 11px;
+		color: #9B9B9B;
+	}
+	.post-title {
+		margin-bottom: 16px;
+		@include font-family(hb);
+		font-size: 20px;
+		line-height: 21px;
+		color: #151515;
+		cursor: pointer;
+
+		a {
+			display: block;
+		}
+
+		&:hover {
+			color: $color-blue;
+			a {
+				text-decoration: none;
+			}
+		}
+	}
+	.post-content {
+		color: $color-gray-2;
+
+		p {
+			font-size: 14px;
+			line-height: 18px;
+			color: rgba($color-gray, .89);
+		}
+	}
+	// обертка для всех полей новости
+	.post-desc {
+		padding-left: 15px;
+		border-left: 1px solid #D7D7D7;
+	}
+	.post-comments {
+		margin-top: 9px;
+		@include font-family(hn);
+		font-size: 9px;
+		line-height: 11px;
+		color: $color-blue-2;
+
+		i.fa {
+			margin-right: 12px;
+			font-size: 23px;
+			color: #000;
+			vertical-align: middle;
+		}
+		span, a {
+			vertical-align: middle;
+		}
+	}
+}

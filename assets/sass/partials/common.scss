@@ -1,3 +1,6 @@
+@include font-face(hn, helvetica-normal);
+@include font-face(hb, helvetica-bold);
+
 * {
 	margin: 0;
 	padding: 0;
@@ -5,26 +8,37 @@
 
 	box-sizing: border-box;
 	// autoprefixer не дополняет, поэтому вручную
-	-webkit-tap-highlight-color: rgba(0,0,0,0);
-	   -moz-tap-highlight-color: rgba(0,0,0,0);
-	    -ms-tap-highlight-color: rgba(0,0,0,0);
-			tap-highlight-color: rgba(0,0,0,0);
+	-webkit-tap-highlight-color: rgba(#FFF6F1, 0.5);
+	   -moz-tap-highlight-color: rgba(#FFF6F1, 0.5);
+	    -ms-tap-highlight-color: rgba(#FFF6F1, 0.5);
+			tap-highlight-color: rgba(#FFF6F1, 0.5);
 }
 
 html {
 	font-size: $base-font-size;
+	height: 100%;
 }
 body {
-	min-width: 320px;
-	font-family: 'R-400';
+	min-width: 1024px;
+	height: 100%;
+	overflow-x: hidden;
+	font-family: Georgia;
+	font-size: 14px;
 	font-weight: normal;
+	background-color: $color-bg-body;
 
-	&.no-scroll { // ios safari bugfix
-		position: fixed;
+	&.no-scroll {
+		position: fixed; // ios safari bugfix
 		width: 100%;
 	}
 }
 
+a {
+	text-decoration: none;
+	&:hover{
+		text-decoration: underline;
+	}
+}
 a, span {
 	color: inherit;
 	font: inherit;
@@ -34,10 +48,18 @@ ul {
 	list-style: none;
 }
 
-// flexible fix
+// columns container
 .wrap {
-	& > * {vertical-align: top;}
-	.wrap {font-size: 0 !important;}
+	font-size: 0;
+
+	& > * {
+		display: inline-block;
+		vertical-align: top;
+		@include font-size(14px);
+	}
+	.wrap {
+		font-size: 0;
+	}
 }
 
 .clrfix {
@@ -49,7 +71,7 @@ ul {
 }
 
 // vertical align
-.vMiddle {
+.v-middle {
 	&:before {
 		content: '';
 		display: inline-block;
@@ -62,5 +84,54 @@ ul {
 	& > * {
 		display: inline-block;
 		vertical-align: middle;
+	}
+}
+
+.banner {
+	@include rem(margin-bottom, 30px);
+	a {
+		display: block;
+	}
+	img {
+		width: 100%;
+	}
+}
+
+.poster {
+	font-size: 0;
+
+	img {
+		margin-bottom: 6px;
+	}
+	.poster-caption {
+		@include font-family(hn);
+		font-size: 9px;
+		line-height: 11px;
+		color: $color-gray-3;
+	}
+}
+
+.table {
+	display: table;
+	width: 100%;
+
+	.col {
+		display: table-cell;
+	}
+}
+
+.split-content {
+	@extend .wrap;
+	
+	.split-col {
+		width: 50%;
+		@include rem(margin-bottom, 25px);
+		@include rem(padding, 0 30px 0 0);
+	}
+
+	.split-col:nth-child(2n) {
+		margin-left: -1px;
+		@include rem(padding, 0 0 0 30px);
+		border-left: 1px solid #D7D7D7;
 	}
 }

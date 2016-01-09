@@ -58,7 +58,6 @@ textarea {
 	// @include rem(padding, 11px 25px);
 	background-color: $button-color;
 	border: 3px solid $button-color;
-	font-family: 'R-700';
 	font-size: 15px;
 	// @include fz(15px);
 	color: #fff;
@@ -67,13 +66,5 @@ textarea {
 	&:hover {
 		background-color: lighten($button-color, 10%);
 	}
-
-	@include additional-colors($color-light-green, green);
-	@include additional-colors($color-gray, gray);
-	@include additional-colors($color-light-gray-2, light-gray);
-	@include additional-colors($color-light-blue, blue);
 }
-
-@include customInput();
-@include customInput($type: radio, $x: 17px, $y: 17px);
 

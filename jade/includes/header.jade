@@ -1,0 +1,32 @@
+header
+	.table
+		.col
+			.weather-block
+				span.city-name Владикавказ: 
+				span.city-temp +12
+
+				.currencies
+					.item
+						i.fa.fa-usd
+						span 70,58
+					.item
+						i.fa.fa-euro
+						span 76,67
+		.col
+			.hot-news
+				.item По делу о хищениях заочно арестован один из бывших руководителей банка «Траст»
+		.col
+			.auth-block 
+				a(href="#")
+					i.fa.fa-sign-in
+					span Вход
+				a(href="#") Регистрация
+	.logo
+		a(href="/")
+			img(src="/assets/images/logo.png", alt="logo")
+
+	nav.top-nav
+		ul
+			each navItem in ['РЕСПУБЛИКА', 'МИР', 'КУЛЬТУРА', 'ЭКОНОМИКА', 'БИЗНЕС', 'СПОРТ', 'КРИМИНАЛ', 'ИСТОРИЯ']
+				li
+					a(href="#")= navItem

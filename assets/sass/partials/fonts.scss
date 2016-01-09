@@ -1,11 +1,10 @@
-@mixin font-face ($font-name) {
-	@font-face {
-		font-family: $font-name;
-		src: url('fonts/#{$font-name}/font.eot');
-		src: url('fonts/#{$font-name}/font.eot') format('embedded-opentype'),
-			 url('fonts/#{$font-name}/font.woff2') format('woff2'),
-			 url('fonts/#{$font-name}/font.woff') format('woff'),
-			 url('fonts/#{$font-name}/font.ttf') format('truetype'),
-			 url('fonts/#{$font-name}/font.svg#Bold') format('svg');
-	}
-}
+// @include font-face(helvetica-light);
+// @include font-face(hn, helvetica-normal);
+// @include font-face(hb, helvetica-bold);
+
+// @include font-face(roboto-light);
+// @include font-face(rbn, roboto-normal);
+// @include font-face(rbb, roboto-bold);
+
+// @include font-face(pt-serif-normal);
+// @include font-face(pt-serif-regular);
