@@ -12,11 +12,12 @@ html
 		.page-wrap
 			include ../includes/header.jade
 			.page-container
-				.page-sidebar.sidebar-left.xl-3-10
-					include ../includes/sidebar-main.jade
-				.page-content.xl-7-10
+				.page-content.xl-2-3
 					block content
-				+posts(2)
+				.page-sidebar.sidebar-right.xl-1-3
+					include ../includes/sidebar-post.jade
+				//- vars.jade
+				+posts()
 		include ../includes/footer.jade
 
 		script(src="/assets/js/vendor/jquery-latest.min.js")

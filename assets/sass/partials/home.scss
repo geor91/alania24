@@ -1,143 +1,14 @@
-// закрепленный пост на главной
-.post-sticky {
-	@include rem(margin-bottom, 30px);
-	border-bottom: 1px solid #D7D7D7;
-
-	.post-image{
-		@include rem(margin, 0 30px 30px 0);
-		float: left;
-	}
-	.post-rubric {
-		margin-bottom: 8px;
-		@include font-family(hn);
-		font-size: 16px;
-		color: $color-blue-2;
-	}
-	.post-title {
-		margin: 14px 0;
-		@include rem(font-size, 30px);
-		line-height: 1.1;
-		color: #151515;
-
-		a:hover {
-			text-decoration: none;
-		}
-	}
-	.post-content {
-		clear: both;
-		color: $color-gray;
-
-		p {
-			font-size: 16px;
-			line-height: 20px;
-		}
-	}
-}
-
 // блок постов вместе с рекламой
 .posts-wrap {
 	@include rem(margin-left, -30px);
-	@extend .wrap;
+	@include wrap();
 
 	.post {
-		width: 50%;
 		@include rem(margin-bottom, 25px);
 		@include rem(padding-left, 30px);
 	}
 
-	&.with-ads {
-		width: 70%;
-		@include rem(margin-right, 30px);
-	}
-
-	&.col-3 {
-		.post {
-			width: 33%;
-		}
-	}
-	&.col-4 {
-		.post {
-			width: 25%;
-		}
-	}
-}
-
-// пост по ширине страницы
-.sinle-post {
-	.post-image {
-		position: relative;
-		@include rem(margin-bottom, 20px);
-		cursor: pointer;
-
-		&:before {
-			content: '';
-			position: absolute;
-			top: 0;
-			left: 0;
-			right: 0;
-			bottom: 17px;
-			background-color: #000;
-			opacity: 0;
-			transition: opacity .3s;
-		}
-
-		.post-image-zoom {
-			position: absolute;
-			bottom: 17px;
-			right: 0;
-			width: 75px;
-			height: 75px;
-			cursor: pointer;
-
-			&:before {
-				content: '';
-				position: absolute;
-				bottom: 0;
-				right: 0;
-				border-style: solid;
-				border-width: 0 0 74px 74px;
-				border-color: transparent transparent $color-bg-body transparent;
-
-				// transition: all .3s;
-			}
-
-			&:after {
-				content: '';
-				display: block;
-				position: absolute;
-				right: 5px;
-				bottom: 5px;
-				width: 20px;
-				height: 20px;
-				background: none;
-				border: 0;
-				border-right: 4px solid #000;
-				border-bottom: 4px solid #000;
-
-				transition: all .3s;
-			}
-		}
-		&:hover {
-			&:before {
-				opacity: .3;
-			}
-			.post-image-zoom:before {
-				// border-width: 0 0 90px 90px;
-				// border-color: transparent transparent #DBCCC4 transparent;
-			}
-			.post-image-zoom:after {
-				// opacity: .7;
-				width: 23px;
-				height: 23px;
-			}
-		}
-	}
-	.post-content {
-		@include rem(margin-bottom, 30px);
-		border-bottom: 1px solid rgba(0,0,0, .1);
-		p {
-			font-size: 16px;
-			line-height: 20px;
-		}
+	& + .page-sidebar {
+		@include rem(margin-left, 30px);
 	}
 }

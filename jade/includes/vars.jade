@@ -1,0 +1,33 @@
+mixin posts(postRows)
+	//- posts mixin
+		//- postRows - кол-во строк выводимых постов
+	if !postRows
+		- postRows = 1;
+	.posts-wrap.xl-4
+		-for (i=0; i<postRows; i++)
+			-for (j=0; j<2; j++)
+				article.post
+					.post-image
+						a(href="") 
+							img(src="/assets/images/tmp/posts/1.jpg", alt="post title")
+					.post-desc
+						.post-date 15:05, 16 декабря 2015
+						.post-title 
+							a(href="") Задача успешно решена, общими усилиями
+						.post-content
+							p Bio — биотех и медицинские технологии; Industry — новые технологии в машиностроении, инженерные разработки, приборостроение, транспорт; Oil & gas — новые материалы.
+				article.post
+					.post-image
+						a(href="") 
+							img(src="/assets/images/tmp/posts/2.jpg", alt="post title")
+					.post-desc
+						.post-date 15:05, 16 декабря 2015
+						.post-title
+							a(href="") Новая подсветка установлена на здании университета
+						.post-content
+							p Гомеостаз, согласно традиционным представлениям, сложен. Перцепция иллюстрирует когнитивный генезис, что вызвало развитие поведения.
+						.post-add-info
+							a(href="#").item
+								i.fa.fa-comments-o
+								span 15 комментариев
+//- posts mixin\

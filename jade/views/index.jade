@@ -1,9 +1,8 @@
 extends ../layouts/default.jade
 block content
 	article.post.post-sticky
-		.post-image.poster
+		.post-image.poster.poster-caption(data-caption="Фото: Наталья Волкова / Фотобанк Лори")
 			img(src="/assets/images/tmp/post-sticky.jpg", alt="Финал конкурса прорывных идей «Эврика! Концепт» пройдет 18 декабря в МГУ")
-			.poster-caption Фото: Наталья Волкова / Фотобанк Лори
 
 		.post-meta
 			.post-rubric
@@ -11,9 +10,10 @@ block content
 			.post-date 15:05, 16 декабря 2015
 			.post-title
 				a(href="#") Финал конкурса прорывных идей «Эврика! Концепт» пройдет 18 декабря в МГУ
-			.post-comments
-				i.fa.fa-comments-o
-				a(href="#") 15 комментариев
+			.post-add-info
+				a(href="#").item
+					i.fa.fa-comments-o
+					span 15 комментариев
 
 		.post-content.split-content
 			.split-col 
@@ -21,7 +21,7 @@ block content
 			.split-col
 				p Конкурсный отбор «Эврика! Концепт» является частью конкурсов «Эврика!». В 2015 году в конкурсном отборе «Эврика! Концепт» четыре номинации: IT+ — информационно-коммуникационные технологии, автоматизация и робототехника; Bio — биотех и медицинские технологии; Industry — новые технологии в машиностроении, инженерные разработки, приборостроение, транспорт; Oil & gas — новые материалы, компоненты, технические системы и оборудование для нефтегазовой отрасли.
 
-	.posts-wrap.with-ads
+	.posts-wrap.xl-7-10.xl-2
 		-for (i=0; i<2; i++)
 			article.post
 				.post-image
@@ -43,10 +43,11 @@ block content
 						a(href="") Новая подсветка установлена на здании университета
 					.post-content
 						p Гомеостаз, согласно традиционным представлениям, сложен. Перцепция иллюстрирует когнитивный генезис, что вызвало развитие поведения.
-					.post-comments
+					.post-add-info
 						i.fa.fa-comments-o
 						a(href="#") 15 комментариев
-	.page-sidebar
+
+	.page-sidebar.xl-3-10
 		.banner
 			a(href="#")
 				img(src="/assets/images/tmp/banner-1.jpg", alt="banner text")
@@ -54,11 +55,10 @@ block content
 	.banner
 		a(href="#")
 			img(src="/assets/images/tmp/banner-2.jpg", alt="banner text")
-	
-	.sinle-post.post
-		.post-image.poster
+
+	.post.sinle-post
+		.post-image.poster.poster-caption(data-caption="Binpress Inc., The Marketplace For Free and Commercial Code")
 			img(src="/assets/images/tmp/single-post.jpg", alt="")
-			.poster-caption Binpress Inc., The Marketplace For Free and Commercial Code
 			.post-image-zoom
 				//- button.zoom-btn
 		.post-content.split-content

@@ -1,0 +1,34 @@
+.widget
+	.poster.poster-overlay
+		a(href="#")
+			img(src="/assets/images/tmp/random-image.jpg", alt="Фото: Наталья Волкова / Фотобанк Лори")
+			.poster-title СТАТЬЯ: Новые высотки в районах столицы
+
+.widget.widget-blinded
+	.news-list
+		.widget-title Выбор редактора
+		ul.widget-content
+			each newsItem in ['Грузия позитивно оценивает возможность отмены визового режима с Россией', 'Два спутника Galileo успешно отделились от ракеты-носителя «Союз-СТ»', 'По делу о хищениях заочно арестован один из бывших руководителей банка «Траст»', 'Мосгорсуд смягчил приговор фигуранту дела о вандализме на столичной высотке', 'Пожар в Доме культуры МВД в Москве потушен']
+				li
+					.news-title 
+						a(href="#")= newsItem
+
+.widget
+	.banner.fixed-image
+		a(href="#")
+			img(src="/assets/images/tmp/banner-3.jpg", alt="banner text")
+
+.widget
+	.news-list
+		.widget-title Обсуждаемое
+		ul.widget-content
+			each newsItem in ['По делу о хищениях заочно арестован один из бывших руководителей банка «Траст»', 'Мосгорсуд смягчил приговор фигуранту дела о вандализме на столичной высотке', 'Грузия позитивно оценивает возможность отмены визового режима с Россией', 'Два спутника Galileo успешно отделились от ракеты-носителя «Союз-СТ»', 'Пожар в Доме культуры МВД в Москве потушен']
+				li
+					.news-date 15:34
+					.news-title 
+						a(href="#")= newsItem
+
+.widget
+	.banner
+		a(href="#")
+			img(src="/assets/images/tmp/banner-4.jpg", alt="banner text")

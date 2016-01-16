@@ -1,11 +1,13 @@
 .page-sidebar {
-	width: 30%;
+	// width: 30%;
 	
 	&.sidebar-left {
 		@include rem(padding-right, 30px);
+		.banner {text-align: left;}
 	}
 	&.sidebar-right {
 		@include rem(padding-left, 30px);
+		.banner {text-align: right;}
 	}
 
 	.widget {
@@ -23,27 +25,34 @@
 				border-bottom: 1px solid rgba(0,0,0, .15);
 			}
 		}
+		&.widget-blinded {
+			.widget-title {
+				@include rem(font-size, 24px);
+				line-height: 36px;
+				color: $color-gray-3;
+			}
+			.widget-content {
+				@include rem(font-size, 17px);
+			}
+		}
 	}
 
 	.news-list {
 		li {
 			position: relative;
-			display: block;
 			margin-bottom: 18px;
-			padding-left: 50px;
 			@extend .clrfix;
+			@include table;
 
 			.news-date {
-				position: absolute;
-				top: 0;
-				left: 0;
-				padding-top: 3px;
+				padding: 3px 20px 0 0;
 				@include font-family(hn);
 				font-size: 12px;
-				color: #9B9B9B;
+				color: $color-gray-3;
 			}
 			.news-title {
-				font-size: 14px;
+				font-size: inherit;
+				@include font-family(hn);
 				line-height: 1.3;
 				color: $color-gray;
 

@@ -1,14 +1,15 @@
 @import 'partials/vars';
 @import 'partials/mixins';
 @import 'partials/normalize';
+@import 'partials/forms';
 @import 'partials/fonts';
+@import 'partials/grid';
 @import 'partials/common';
-// @import 'partials/grid';
 @import 'partials/header';
 @import 'partials/main';
 @import 'partials/sidebar';
-@import 'partials/content';
 @import 'partials/articles';
+@import 'partials/comments';
 @import 'partials/home';
 @import 'partials/footer';
 @import 'partials/responsive';

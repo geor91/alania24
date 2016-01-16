@@ -5,8 +5,8 @@ footer {
 	padding: 25px 0 100px;
 	border-top: 2px solid #000;
 	@include font-family(hn);
-	color: $color-gray-3;
-	@extend .wrap;
+	color: $color-gray-4;
+	@include wrap();
 
 	.footer-col {
 		width: 25%;
@@ -28,7 +28,7 @@ footer {
 		@include rem(margin-bottom, 20px);
 		font-size: 11px;
 		line-height: 13px;
-		color: $color-gray-3;
+		color: $color-gray-4;
 	}
 	.social {
 		a {

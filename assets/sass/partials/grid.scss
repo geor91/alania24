@@ -18,11 +18,34 @@
 // @import "flexiblegs-plus";
 // @import "flexiblegs";
 
-.wrap {
+$syntax: (css); $breakpoint: (xl:"");
+$wrap-col:     (1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12); //e.g. xl-4
+$col-row:      (1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12); //e.g. xl-7-10
+$wrap-prop:    (); $col-width:    ();
+$col-prop:     (); $wrap-gutter:  ();
+$wrap-outside: (); $wrap-masonry: ();
+
+@import "flexiblegs-plus";
+@import "flexiblegs";
+
+
+// wrap mixin styles (обертка для колонок)
+// небольшой fix, упрощение стилей flexible.gs
+@mixin wrap () {
 	font-size: 0;
 
 	& > * {
 		display: inline-block;
+		vertical-align: top;
+		@include font-size(14px);
+	}
+}
+
+// упрощенный аналог xl-table
+@mixin table () {
+	display: table;
+	& > * {
+		display: table-cell;
 		vertical-align: top;
 	}
 }

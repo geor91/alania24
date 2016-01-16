@@ -8,10 +8,10 @@
 
 	box-sizing: border-box;
 	// autoprefixer не дополняет, поэтому вручную
-	-webkit-tap-highlight-color: rgba(#FFF6F1, 0.5);
-	   -moz-tap-highlight-color: rgba(#FFF6F1, 0.5);
-	    -ms-tap-highlight-color: rgba(#FFF6F1, 0.5);
-			tap-highlight-color: rgba(#FFF6F1, 0.5);
+	// -webkit-tap-highlight-color: rgba(#FFF6F1, 0.5);
+	//    -moz-tap-highlight-color: rgba(#FFF6F1, 0.5);
+	//     -ms-tap-highlight-color: rgba(#FFF6F1, 0.5);
+	// 		tap-highlight-color: rgba(#FFF6F1, 0.5);
 }
 
 html {
@@ -19,7 +19,6 @@ html {
 	height: 100%;
 }
 body {
-	min-width: 1024px;
 	height: 100%;
 	overflow-x: hidden;
 	font-family: Georgia;
@@ -39,27 +38,14 @@ a {
 		text-decoration: underline;
 	}
 }
-a, span {
+a, span, p {
 	color: inherit;
 	font: inherit;
+	line-height: inherit;
 }
 
 ul {
 	list-style: none;
-}
-
-// columns container
-.wrap {
-	font-size: 0;
-
-	& > * {
-		display: inline-block;
-		vertical-align: top;
-		@include font-size(14px);
-	}
-	.wrap {
-		font-size: 0;
-	}
 }
 
 .clrfix {
@@ -89,25 +75,66 @@ ul {
 
 .banner {
 	@include rem(margin-bottom, 30px);
+
 	a {
 		display: block;
 	}
 	img {
 		width: 100%;
 	}
+	&.fixed-image img {
+		width: auto;
+	}
 }
 
 .poster {
+	position: relative;
 	font-size: 0;
 
 	img {
-		margin-bottom: 6px;
+		display: block;
+		width: 100%;
 	}
-	.poster-caption {
+	.poster-title {
+		display: block;
+		position: absolute;
+		bottom: 0;
+		margin-top: 6px;
+		@include rem(padding, 24px);
+		@include font-family(hb);
+		@include rem(font-size, 27px);
+		color: #fff;
+		// background-color: rgba(0,0,0, .3);
+		// transition: background-color .4s;
+	}
+	&.poster-caption:after {
+		content: attr(data-caption);
+		display: inline-block;
+		margin-top: 6px;
 		@include font-family(hn);
 		font-size: 9px;
 		line-height: 11px;
-		color: $color-gray-3;
+		color: $color-gray-4;
+	}
+	&.poster-overlay {
+		&:before {
+			content: '';
+			position: absolute;
+			top: 0;
+			left: 0;
+			right: 0;
+			bottom: 0;
+			background-color: rgba(0,0,0, .3);
+			transition: background-color .4s;
+		}
+		&:hover {
+			&:before {
+				background-color: transparent;
+			}
+			// .poster-title {
+			// 	background-color: rgba(0,0,0, .3);
+			// }
+		}
 	}
 }
 
@@ -121,7 +148,7 @@ ul {
 }
 
 .split-content {
-	@extend .wrap;
+	@include wrap();
 	
 	.split-col {
 		width: 50%;
@@ -132,6 +159,6 @@ ul {
 	.split-col:nth-child(2n) {
 		margin-left: -1px;
 		@include rem(padding, 0 0 0 30px);
-		border-left: 1px solid #D7D7D7;
+		border-left: 1px solid $color-gray-5;
 	}
 }
