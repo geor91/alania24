@@ -1,0 +1,33 @@
+extends ../layouts/post.jade
+block content
+	article.post.post-full
+
+		.post-meta
+			.post-rubric
+				a(href="#") Наименование категории
+			.post-date 15:05, 16 декабря 2015
+			h1.post-title
+				a(href="#") Новость с галереей
+			.post-add-info
+				a.item(href="#", data-action="printPage")
+					i.fa.fa-print
+				a(href="#").item
+					i.fa.fa-comments-o
+					span 15 комментариев
+
+			.post-excerpt Какие фильмы собрали наибольшую кассу в прокате России и СНГ, за исключением Украины, подсчитали аналитики «Бюллетеня кинопрокатчика»
+
+		#sliderID.post-gallery.owl-carousel
+			.poster.poster-caption(data-caption="Фото: Наталья Волкова / Фотобанк Лори")
+				img(src="/assets/images/tmp/post-gallery-item.jpg", alt="Финал конкурса прорывных идей «Эврика! Концепт» пройдет 18 декабря в МГУ")
+			.poster.poster-caption(data-caption="Фото: Наталья Волкова / Фотобанк Лори")
+				img(src="/assets/images/tmp/post-gallery-item.jpg", alt="Финал конкурса прорывных идей «Эврика! Концепт» пройдет 18 декабря в МГУ")
+			.poster.poster-caption(data-caption="Фото: Наталья Волкова / Фотобанк Лори")
+				img(src="/assets/images/tmp/post-gallery-item.jpg", alt="Финал конкурса прорывных идей «Эврика! Концепт» пройдет 18 декабря в МГУ")
+			.poster.poster-caption(data-caption="Фото: Наталья Волкова / Фотобанк Лори")
+				img(src="/assets/images/tmp/post-gallery-item.jpg", alt="Финал конкурса прорывных идей «Эврика! Концепт» пройдет 18 декабря в МГУ")
+
+		.post-desc
+			p В эпоху ускоряющихся изменений самым важным для успешного топ-менеджера становится умение быстро реагировать и вовремя менять стратегию. Для того чтобы не утратить конкурентоспособность, бизнес должен быть готов быстро адаптироваться к новым обстоятельствам. В этих условиях решающим становится слаженность работы всех звеньев компании.
+
+		include ../includes/comments.jade

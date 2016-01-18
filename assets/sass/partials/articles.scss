@@ -52,7 +52,7 @@
 		border-left: 1px solid $color-gray-5;
 	}
 	.post-add-info {
-		margin-top: 9px;
+		margin: 9px 0 15px;
 		@include font-family(hn);
 		font-size: 9px;
 		line-height: 11px;
@@ -80,7 +80,6 @@
 		line-height: 1.2;
 		color: $color-gray-3;
 	}
-
 	.embed-wrap {
 		.embed-block {
 			float: left;
@@ -90,6 +89,30 @@
 		}
 		.embed-text {
 
+		}
+	}
+	.post-gallery {
+		@include rem(padding, 0 55px);
+		@include rem(margin-bottom, 25px);
+		.owl-prev,
+		.owl-next {
+			position: absolute;
+			top: 50%;
+			left: 5px;
+			background: url(../../assets/images/gallery-arrows-sprite.png) no-repeat left;
+			width: 33px;
+			height: 55px;
+			transition: opacity .3s;
+			opacity: .6;
+
+			&:hover {
+				opacity: .9;
+			}
+		}
+		.owl-next {
+			left: auto;
+			right: 5px;
+			background-position: right;
 		}
 	}
 

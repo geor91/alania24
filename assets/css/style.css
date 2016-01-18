@@ -741,6 +741,7 @@ ul {
 
 .split-content > * {
   display: inline-block;
+  max-width: 100%;
   vertical-align: top;
   font-size: 14px;
   font-size: 1.4rem;
@@ -943,6 +944,7 @@ header .logo img {
 
 .page-container > * {
   display: inline-block;
+  max-width: 100%;
   vertical-align: top;
   font-size: 14px;
   font-size: 1.4rem;
@@ -954,6 +956,7 @@ header .logo img {
 
 .page-content > * {
   display: inline-block;
+  max-width: 100%;
   vertical-align: top;
   font-size: 14px;
   font-size: 1.4rem;
@@ -1133,7 +1136,7 @@ header .logo img {
 }
 
 .post .post-add-info {
-  margin-top: 9px;
+  margin: 9px 0 15px;
   font-family: hn, arial, serif;
   font-size: 9px;
   line-height: 11px;
@@ -1172,6 +1175,38 @@ header .logo img {
   margin-left: -17rem;
   padding: 0 30px 15px 0;
   padding: 0 3rem 1.5rem 0;
+}
+
+.post .post-gallery {
+  padding: 0 55px;
+  padding: 0 5.5rem;
+  margin-bottom: 25px;
+  margin-bottom: 2.5rem;
+}
+
+.post .post-gallery .owl-prev,
+.post .post-gallery .owl-next {
+  position: absolute;
+  top: 50%;
+  left: 5px;
+  background: url(../../assets/images/gallery-arrows-sprite.png) no-repeat left;
+  width: 33px;
+  height: 55px;
+  -webkit-transition: opacity 0.3s;
+       -o-transition: opacity 0.3s;
+          transition: opacity 0.3s;
+  opacity: .6;
+}
+
+.post .post-gallery .owl-prev:hover,
+.post .post-gallery .owl-next:hover {
+  opacity: .9;
+}
+
+.post .post-gallery .owl-next {
+  left: auto;
+  right: 5px;
+  background-position: right;
 }
 
 .post.post-sticky {
@@ -1412,6 +1447,7 @@ header .logo img {
 
 .posts-wrap > * {
   display: inline-block;
+  max-width: 100%;
   vertical-align: top;
   font-size: 14px;
   font-size: 1.4rem;
@@ -1442,6 +1478,7 @@ footer {
 
 footer > * {
   display: inline-block;
+  max-width: 100%;
   vertical-align: top;
   font-size: 14px;
   font-size: 1.4rem;

@@ -3,10 +3,7 @@ include ../includes/vars.jade
 doctype html
 html
 	head
-		title Alania 24
-		meta(name="viewport" content="width=device-width, initial-scale=1")
-		link(rel="stylesheet", href="/assets/css/vendor/font-awesome.min.css")
-		link(rel="stylesheet", href="/assets/css/style.css")
+		include ../includes/head.jade
 		block head
 	body
 		.page-wrap
@@ -19,7 +16,4 @@ html
 				+posts(2)
 		include ../includes/footer.jade
 
-		script(src="/assets/js/vendor/jquery-latest.min.js")
-		script(src="/assets/js/partials/modal.js")
-		script(src="/assets/js/partials/expand.js")
-		script(src="/assets/js/app.js")
+	include ../includes/scripts.jade
