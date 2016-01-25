@@ -111,6 +111,7 @@ header {
 			border-bottom: 2px solid transparent;
 			@include font-family(hb);
 			@include font-size(19px);
+			text-transform: uppercase;
 			color: $color-blue;
 			transition: color .3s;
 
@@ -126,7 +127,8 @@ header {
 				transition: opacity .3s;
 			}
 
-			&:hover {
+			&:hover,
+			&.active {
 				color: darken($color-blue, 5%);
 				color: #233C54;
 				text-decoration: none;

@@ -112,7 +112,8 @@ button, select {
   text-transform: none;
 }
 
-button, html input[type="button"], input[type="reset"], input[type="submit"] {
+button, html input[type="button"],
+input[type="reset"], input[type="submit"] {
   -webkit-appearance: button;
   cursor: pointer;
 }
@@ -155,7 +156,7 @@ input[type="search"]::-webkit-search-cancel-button, input[type="search"]::-webki
 fieldset {
   border: 1px solid silver;
   margin: 0 2px;
-  padding: 0.35em 0.625em 0.75em;
+  padding: .35em .625em .75em;
 }
 
 legend {
@@ -229,9 +230,8 @@ textarea {
   border: 3px solid #444;
   font-family: hb, arial, serif;
   color: #fff;
-  -webkit-transition: border-color 0.3s, background-color 0.3s;
-       -o-transition: border-color 0.3s, background-color 0.3s;
-          transition: border-color 0.3s, background-color 0.3s;
+  -webkit-transition: border-color .3s, background-color .3s;
+  transition: border-color .3s, background-color .3s;
 }
 
 .button:hover {
@@ -609,8 +609,9 @@ html {
 
 body {
   height: 100%;
+  padding: 0 10px;
   overflow-x: hidden;
-  font-family: Georgia;
+  font-family: Georgia, serif;
   font-size: 14px;
   font-weight: normal;
   background-color: #FFF6F1;
@@ -717,9 +718,8 @@ ul {
   right: 0;
   bottom: 0;
   background-color: rgba(0, 0, 0, 0.3);
-  -webkit-transition: background-color 0.4s;
-       -o-transition: background-color 0.4s;
-          transition: background-color 0.4s;
+  -webkit-transition: background-color .4s;
+  transition: background-color .4s;
 }
 
 .poster.poster-overlay:hover:before {
@@ -733,6 +733,7 @@ ul {
 
 .table .col {
   display: table-cell;
+  max-width: 1px;
 }
 
 .split-content {
@@ -890,10 +891,10 @@ header .logo img {
   font-family: hb, arial, serif;
   font-size: 19px;
   font-size: 1.9rem;
+  text-transform: uppercase;
   color: #2980B9;
-  -webkit-transition: color 0.3s;
-       -o-transition: color 0.3s;
-          transition: color 0.3s;
+  -webkit-transition: color .3s;
+  transition: color .3s;
 }
 
 .top-nav li a:before {
@@ -905,18 +906,17 @@ header .logo img {
   height: 8px;
   background: #233C54;
   opacity: 0;
-  -webkit-transition: opacity 0.3s;
-       -o-transition: opacity 0.3s;
-          transition: opacity 0.3s;
+  -webkit-transition: opacity .3s;
+  transition: opacity .3s;
 }
 
-.top-nav li a:hover {
+.top-nav li a:hover, .top-nav li a.active {
   color: #2472a4;
   color: #233C54;
   text-decoration: none;
 }
 
-.top-nav li a:hover:before {
+.top-nav li a:hover:before, .top-nav li a.active:before {
   opacity: 1;
 }
 
@@ -925,7 +925,7 @@ header .logo img {
   min-height: 100%;
   margin: 0 auto;
   margin-bottom: -260px;
-  padding: 100px 10px 0;
+  padding: 100px 0 0;
   min-width: 960px;
 }
 
@@ -1167,21 +1167,21 @@ header .logo img {
   color: #9B9B9B;
 }
 
-.post .embed-wrap .embed-block {
-  float: left;
-  width: 290px;
-  width: 29rem;
-  margin-left: -170px;
-  margin-left: -17rem;
-  padding: 0 30px 15px 0;
-  padding: 0 3rem 1.5rem 0;
-}
-
 .post .post-gallery {
   padding: 0 55px;
   padding: 0 5.5rem;
   margin-bottom: 25px;
   margin-bottom: 2.5rem;
+}
+
+.post .post-gallery .poster {
+  max-height: 450px;
+}
+
+.post .post-gallery .poster img {
+  width: auto;
+  min-width: 100%;
+  height: 100%;
 }
 
 .post .post-gallery .owl-prev,
@@ -1192,9 +1192,8 @@ header .logo img {
   background: url(../../assets/images/gallery-arrows-sprite.png) no-repeat left;
   width: 33px;
   height: 55px;
-  -webkit-transition: opacity 0.3s;
-       -o-transition: opacity 0.3s;
-          transition: opacity 0.3s;
+  -webkit-transition: opacity .3s;
+  transition: opacity .3s;
   opacity: .6;
 }
 
@@ -1259,9 +1258,8 @@ header .logo img {
   bottom: 17px;
   background-color: #000;
   opacity: 0;
-  -webkit-transition: opacity 0.3s;
-       -o-transition: opacity 0.3s;
-          transition: opacity 0.3s;
+  -webkit-transition: opacity .3s;
+  transition: opacity .3s;
 }
 
 .post.sinle-post .post-image .post-image-zoom {
@@ -1295,9 +1293,8 @@ header .logo img {
   border: 0;
   border-right: 4px solid #000;
   border-bottom: 4px solid #000;
-  -webkit-transition: all 0.3s;
-       -o-transition: all 0.3s;
-          transition: all 0.3s;
+  -webkit-transition: all .3s;
+  transition: all .3s;
 }
 
 .post.sinle-post .post-image:hover:before {
@@ -1357,6 +1354,16 @@ header .logo img {
 .post.post-full .embed-wrap {
   margin-bottom: 20px;
   margin-bottom: 2rem;
+}
+
+.post .post-embed {
+  float: left;
+  width: 290px;
+  width: 29rem;
+  margin-left: -170px;
+  margin-left: -17rem;
+  padding: 0 30px 15px 0;
+  padding: 0 3rem 1.5rem 0;
 }
 
 .comments {
