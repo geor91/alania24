@@ -45,6 +45,9 @@
 			line-height: 18px;
 			color: rgba($color-gray, .89);
 		}
+		p + p {
+			margin-top: 10px;
+		}
 	}
 	// обертка для всех полей новости
 	.post-desc {
@@ -85,7 +88,8 @@
 		@include rem(margin-bottom, 25px);
 	
 		.poster {
-			max-height: 450px;
+			@include rem(height, 450px);
+			padding-bottom: 20px;
 
 			img {
 				width: auto;
@@ -99,9 +103,10 @@
 			position: absolute;
 			top: 50%;
 			left: 5px;
-			background: url(../../assets/images/gallery-arrows-sprite.png) no-repeat left;
 			width: 33px;
 			height: 55px;
+			margin-top: -27px;
+			background: url(../../assets/images/gallery-arrows-sprite.png) no-repeat left;
 			transition: opacity .3s;
 			opacity: .6;
 
@@ -119,9 +124,11 @@
 	// закрепленный пост
 	&.post-sticky {
 		@include rem(margin-bottom, 30px);
+		@include rem(padding-bottom, 25px);
 		border-bottom: 1px solid $color-gray-5;
 
 		.post-image{
+			width: 50%;
 			@include rem(margin, 0 30px 30px 0);
 			float: left;
 		}

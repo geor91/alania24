@@ -112,8 +112,7 @@ button, select {
   text-transform: none;
 }
 
-button, html input[type="button"],
-input[type="reset"], input[type="submit"] {
+button, html input[type="button"], input[type="reset"], input[type="submit"] {
   -webkit-appearance: button;
   cursor: pointer;
 }
@@ -156,7 +155,7 @@ input[type="search"]::-webkit-search-cancel-button, input[type="search"]::-webki
 fieldset {
   border: 1px solid silver;
   margin: 0 2px;
-  padding: .35em .625em .75em;
+  padding: 0.35em 0.625em 0.75em;
 }
 
 legend {
@@ -230,8 +229,9 @@ textarea {
   border: 3px solid #444;
   font-family: hb, arial, serif;
   color: #fff;
-  -webkit-transition: border-color .3s, background-color .3s;
-  transition: border-color .3s, background-color .3s;
+  -webkit-transition: border-color 0.3s, background-color 0.3s;
+       -o-transition: border-color 0.3s, background-color 0.3s;
+          transition: border-color 0.3s, background-color 0.3s;
 }
 
 .button:hover {
@@ -677,6 +677,16 @@ ul {
   width: auto;
 }
 
+.table {
+  display: table;
+  width: 100%;
+}
+
+.table .col {
+  display: table-cell;
+  max-width: 1px;
+}
+
 .poster {
   position: relative;
   font-size: 0;
@@ -718,26 +728,19 @@ ul {
   right: 0;
   bottom: 0;
   background-color: rgba(0, 0, 0, 0.3);
-  -webkit-transition: background-color .4s;
-  transition: background-color .4s;
+  -webkit-transition: background-color 0.4s;
+       -o-transition: background-color 0.4s;
+          transition: background-color 0.4s;
 }
 
 .poster.poster-overlay:hover:before {
   background-color: transparent;
 }
 
-.table {
-  display: table;
-  width: 100%;
-}
-
-.table .col {
-  display: table-cell;
-  max-width: 1px;
-}
-
 .split-content {
   font-size: 0;
+  margin-bottom: -25px;
+  margin-bottom: -2.5rem;
 }
 
 .split-content > * {
@@ -748,7 +751,7 @@ ul {
   font-size: 1.4rem;
 }
 
-.split-content .split-col {
+.split-content p {
   width: 50%;
   margin-bottom: 25px;
   margin-bottom: 2.5rem;
@@ -756,11 +759,89 @@ ul {
   padding: 0 3rem 0 0;
 }
 
-.split-content .split-col:nth-child(2n) {
+.split-content p + p {
+  margin-top: 0 !important;
+}
+
+.split-content p:nth-child(2n) {
   margin-left: -1px;
   padding: 0 0 0 30px;
   padding: 0 0 0 3rem;
   border-left: 1px solid #D7D7D7;
+}
+
+.pagination {
+  width: 100%;
+  margin: 0 0 30px 30px;
+  padding-top: 20px;
+  border-top: 1px solid #D7D7D7;
+}
+
+.pagination ul {
+  font-size: 0;
+}
+
+.pagination li {
+  display: inline-block;
+  margin: 0 5px;
+}
+
+.pagination li a {
+  display: block;
+  padding: 5px 10px;
+  border: 1px solid #B9B9B9;
+  font-family: hn, arial, serif;
+  font-size: 14px;
+  text-align: center;
+  color: #000;
+  -webkit-transition: all 0.3s;
+       -o-transition: all 0.3s;
+          transition: all 0.3s;
+  opacity: .6;
+}
+
+.pagination li a.active {
+  color: #fff;
+  background-color: #2980B9;
+  border-color: transparent;
+  opacity: 1;
+}
+
+.pagination li a.active.active:hover {
+  cursor: default;
+  opacity: 1;
+}
+
+.pagination li a.disabled {
+  cursor: default;
+  opacity: .6;
+}
+
+.pagination li a.disabled:hover {
+  opacity: .6;
+}
+
+.pagination li a:hover {
+  text-decoration: none;
+  opacity: 1;
+}
+
+.pagination li:first-child {
+  margin-left: 0;
+}
+
+.pagination li:first-child a {
+  -webkit-border-radius: 0 0 0 5px;
+          border-radius: 0 0 0 5px;
+}
+
+.pagination li:last-child {
+  margin-right: 0;
+}
+
+.pagination li:last-child a {
+  -webkit-border-radius: 0 5px 0 0;
+          border-radius: 0 5px 0 0;
 }
 
 header {
@@ -893,8 +974,9 @@ header .logo img {
   font-size: 1.9rem;
   text-transform: uppercase;
   color: #2980B9;
-  -webkit-transition: color .3s;
-  transition: color .3s;
+  -webkit-transition: color 0.3s;
+       -o-transition: color 0.3s;
+          transition: color 0.3s;
 }
 
 .top-nav li a:before {
@@ -906,17 +988,20 @@ header .logo img {
   height: 8px;
   background: #233C54;
   opacity: 0;
-  -webkit-transition: opacity .3s;
-  transition: opacity .3s;
+  -webkit-transition: opacity 0.3s;
+       -o-transition: opacity 0.3s;
+          transition: opacity 0.3s;
 }
 
-.top-nav li a:hover, .top-nav li a.active {
+.top-nav li a:hover,
+.top-nav li a.active {
   color: #2472a4;
   color: #233C54;
   text-decoration: none;
 }
 
-.top-nav li a:hover:before, .top-nav li a.active:before {
+.top-nav li a:hover:before,
+.top-nav li a.active:before {
   opacity: 1;
 }
 
@@ -1130,6 +1215,10 @@ header .logo img {
   color: rgba(68, 68, 68, 0.89);
 }
 
+.post .post-content p + p {
+  margin-top: 10px;
+}
+
 .post .post-desc {
   padding-left: 15px;
   border-left: 1px solid #D7D7D7;
@@ -1175,7 +1264,9 @@ header .logo img {
 }
 
 .post .post-gallery .poster {
-  max-height: 450px;
+  height: 450px;
+  height: 45rem;
+  padding-bottom: 20px;
 }
 
 .post .post-gallery .poster img {
@@ -1189,11 +1280,13 @@ header .logo img {
   position: absolute;
   top: 50%;
   left: 5px;
-  background: url(../../assets/images/gallery-arrows-sprite.png) no-repeat left;
   width: 33px;
   height: 55px;
-  -webkit-transition: opacity .3s;
-  transition: opacity .3s;
+  margin-top: -27px;
+  background: url(../../assets/images/gallery-arrows-sprite.png) no-repeat left;
+  -webkit-transition: opacity 0.3s;
+       -o-transition: opacity 0.3s;
+          transition: opacity 0.3s;
   opacity: .6;
 }
 
@@ -1211,10 +1304,13 @@ header .logo img {
 .post.post-sticky {
   margin-bottom: 30px;
   margin-bottom: 3rem;
+  padding-bottom: 25px;
+  padding-bottom: 2.5rem;
   border-bottom: 1px solid #D7D7D7;
 }
 
 .post.post-sticky .post-image {
+  width: 50%;
   margin: 0 30px 30px 0;
   margin: 0 3rem 3rem 0;
   float: left;
@@ -1258,8 +1354,9 @@ header .logo img {
   bottom: 17px;
   background-color: #000;
   opacity: 0;
-  -webkit-transition: opacity .3s;
-  transition: opacity .3s;
+  -webkit-transition: opacity 0.3s;
+       -o-transition: opacity 0.3s;
+          transition: opacity 0.3s;
 }
 
 .post.sinle-post .post-image .post-image-zoom {
@@ -1293,8 +1390,9 @@ header .logo img {
   border: 0;
   border-right: 4px solid #000;
   border-bottom: 4px solid #000;
-  -webkit-transition: all .3s;
-  transition: all .3s;
+  -webkit-transition: all 0.3s;
+       -o-transition: all 0.3s;
+          transition: all 0.3s;
 }
 
 .post.sinle-post .post-image:hover:before {

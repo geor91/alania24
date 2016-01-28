@@ -88,6 +88,16 @@ ul {
 	}
 }
 
+.table {
+	display: table;
+	width: 100%;
+
+	.col {
+		display: table-cell;
+		max-width: 1px;
+	}
+}
+
 .poster {
 	position: relative;
 	font-size: 0;
@@ -139,28 +149,85 @@ ul {
 	}
 }
 
-.table {
-	display: table;
-	width: 100%;
-
-	.col {
-		display: table-cell;
-		max-width: 1px;
-	}
-}
-
 .split-content {
 	@include wrap();
+	@include rem(margin-bottom, -25px); // убираем отступы от дочерних элементов
 	
-	.split-col {
+	p {
 		width: 50%;
 		@include rem(margin-bottom, 25px);
 		@include rem(padding, 0 30px 0 0);
 	}
+	p + p {
+		margin-top: 0 !important;
+	}
 
-	.split-col:nth-child(2n) {
+	p:nth-child(2n) {
 		margin-left: -1px;
 		@include rem(padding, 0 0 0 30px);
 		border-left: 1px solid $color-gray-5;
+	}
+}
+
+.pagination {
+	width: 100%;
+	margin: 0 0 30px 30px;
+	padding-top: 20px;
+	border-top: 1px solid $color-gray-5;
+
+	ul {
+		font-size: 0;
+	}
+	li {
+		display: inline-block;
+		margin: 0 5px;
+
+		a {
+			display: block;
+			padding: 5px 10px;
+			border: 1px solid $color-gray-4;
+			@include font-family(hn);
+			font-size: 14px;
+			text-align: center;
+			color: #000;
+			transition: all .3s;
+			opacity: .6;
+
+			&.active {
+				color: #fff;
+				background-color: $color-blue;
+				border-color: transparent;
+				opacity: 1;
+
+				&.active:hover {
+					cursor: default;
+					opacity: 1;
+				}
+			}
+			&.disabled {
+				cursor: default;
+				opacity: .6;
+				&:hover {
+					opacity: .6;
+				}
+			}
+
+			&:hover {
+				text-decoration: none;
+				opacity: 1;
+			}
+		}
+		&:first-child {
+			margin-left: 0;
+			a {
+				border-radius: 0 0 0 5px;				
+			}
+		}
+		&:last-child {
+			margin-right: 0;
+			a {
+				border-radius: 0 5px 0 0;
+			}
+		}
 	}
 }

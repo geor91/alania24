@@ -1,21 +1,24 @@
 $(document).ready(function() {
 	// init slider on gallery page
 	$('#sliderID').owlCarousel({
-		pagination: false,
-		navigation: true,
-		navigationText: false,
-		slideSpeed: 400,
-		singleItem:true
+		dots: false,
+		items: 1,
+		loop: true,
+		nav: true,
+		navSpeed: 300,
+		navText: false
 	});
 
 	// init slider on gallery page
 	$('#hot-news-slider').owlCarousel({
-		pagination: false,
-		navigation: false,
-		slideSpeed: 1000,
-		autoPlay: true,
+		autoplay: true,
+		autoplayHoverPause: true,
+		autoplaySpeed: 4000,
+		autoplayTimeout: 6000,
+		dots: false,
+		items: 1,
+		loop: true,
 		mouseDrag: false,
-		touchDrag: false,
-		singleItem:true
+		touchDrag: false
 	});
 });
