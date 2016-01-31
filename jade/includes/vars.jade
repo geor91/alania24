@@ -3,7 +3,7 @@ mixin posts(postRows)
 		//- postRows - кол-во строк выводимых постов
 	if !postRows
 		- postRows = 1;
-	.posts-wrap.xl-4
+	.posts-wrap: .row.xl-4
 		-for (i=0; i<postRows; i++)
 			-for (j=0; j<2; j++)
 				article.post

@@ -1,0 +1,47 @@
+extends ../layouts/default.jade
+block content
+	.auth-area
+		.row.xl-2
+			div#loginForm
+				fieldset
+					legend Войти
+					.pair
+						label Электронная почта
+						input(type="email", tabindex="1", required)
+					.pair
+						label Пароль
+						input(type="password", tabindex="2", required)
+					.pair.table
+						.col
+							label.checkbox
+								input(type="checkbox", tabindex="3")
+								//- i.fa.fa-check
+								span Запомнить меня
+						.col.text-right
+							button.button.button-submit(tabindex="4") Войти
+					a.link(href="#", tabindex="5") Нажмите если забыли пароль
+
+			form#regForm
+				fieldset
+					legend Регистрация на сайте
+					.pair
+						label Электронная почта
+						input(type="email", tabindex="6", required)
+					.pair.gutter-30
+						.row
+							.xl-1-2
+								label Пароль
+								input(type="password", tabindex="7", required)
+							.xl-1-2
+								label Пароль
+								input(type="password", tabindex="8", required)
+					.pair
+						label Ваше имя
+						input(type="text", tabindex="9")
+					.pair.table
+						.col.xl-5-10
+							label.checkbox
+								input(type="checkbox", tabindex="10")
+								span Я согласен с правилами регистрации и конфиденциальности
+						.col.xl-4-10.text-right
+							button.button.button-primary(tabindex="11") Зарегистрироваться

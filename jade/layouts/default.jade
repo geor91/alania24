@@ -1,5 +1,4 @@
 include ../includes/vars.jade
-//- layout.jade
 doctype html
 html
 	head
@@ -9,10 +8,7 @@ html
 		.page-wrap
 			include ../includes/header.jade
 			.page-container
-				.page-sidebar.sidebar-left.xl-3-10
-					include ../includes/sidebar-main.jade
-				.page-content.xl-7-10
-					block content
+				block content
 				+posts(2)
 		include ../includes/footer.jade
 

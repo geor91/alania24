@@ -1,0 +1,23 @@
+.auth-area {
+	@include wrap($gutter: 60px);
+	width: 100%;
+	@include rem(margin-bottom, 40px);
+	@include rem(padding, 40px 0);
+	@include font-family(hn);
+
+	fieldset {
+		border: 0;
+		padding: 0;
+		margin: 0;
+
+		legend {
+			@include font-family(hb);
+			@include rem(font-size, 30px);
+			@include rem(margin-bottom, 25px);
+		}
+		
+		.button-submit {
+			@include rem(min-width, 170px);
+		}
+	}
+}

@@ -38,6 +38,19 @@ a {
 	&:hover{
 		text-decoration: underline;
 	}
+	&.link {
+		color: $color-blue;
+		border-bottom: 1px solid;
+		&:hover {
+			color: darken($color-blue, 15%);
+			text-decoration: none;
+		}
+		&:focus {
+			outline: none;
+			border-width: 2px;
+			border-color: darken($color-blue, 15%);
+		}
+	}
 }
 a, span, p {
 	color: inherit;
@@ -56,6 +69,11 @@ ul {
 		clear: both;
 	}
 }
+
+.pull-left {float: left;}
+.pull-right {float: right;}
+.text-left {text-align: left;}
+.text-right {text-align: right;}
 
 // vertical align
 .v-middle {
@@ -96,6 +114,9 @@ ul {
 		display: table-cell;
 		max-width: 1px;
 	}
+}
+.gutter-30 {
+	@include wrap(30px);
 }
 
 .poster {
