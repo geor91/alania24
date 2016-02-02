@@ -18,12 +18,16 @@
 // @import "flexiblegs-plus";
 // @import "flexiblegs";
 
-$syntax: (css); $breakpoint: (xl:"");
-$wrap-col:     (1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12); //e.g. xl-4
-$col-row:      (1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12); //e.g. xl-7-10
-$wrap-prop:    (); $col-width:    ();
-$col-prop:     (); $wrap-gutter:  ();
-$wrap-outside: (); $wrap-masonry: ();
+$syntax: (css); 
+$breakpoint: (xl:"");
+$wrap-col:     (1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12); // e.g. xl-4
+$wrap-prop:    (left, center, right); // e.g. xl-center, xl-right
+$col-row:      (1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12); // e.g. xl-7-10
+$col-width:    ();
+$col-prop:     ();
+$wrap-gutter:  ();
+$wrap-outside: ();
+$wrap-masonry: ();
 
 @import "flexiblegs-plus";
 @import "flexiblegs";

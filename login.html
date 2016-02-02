@@ -48,9 +48,9 @@
         </nav>
       </header>
       <div class="page-container">
-        <div class="auth-area">
-          <div class="row xl-2">
-            <div id="loginForm">
+        <div class="auth-area single-form">
+          <div class="row">
+            <form id="loginForm" class="xl-4-11">
               <fieldset>
                 <legend>Войти</legend>
                 <div class="pair">
@@ -70,15 +70,23 @@
                   <div class="col text-right">
                     <button tabindex="4" class="button button-submit">Войти</button>
                   </div>
-                </div><a href="#" tabindex="5" class="link">Нажмите если забыли пароль</a>
+                </div><a href="#" tabindex="5" class="link">Забыли пароль?</a>
               </fieldset>
-            </div>
-            <form id="regForm">
+            </form>
+            <form id="regForm" class="xl-7-11">
               <fieldset>
                 <legend>Регистрация на сайте</legend>
-                <div class="pair">
-                  <label>Электронная почта</label>
-                  <input type="email" tabindex="6" required>
+                <div class="pair gutter-30">
+                  <div class="row">
+                    <div class="xl-1-2">
+                      <label>Электронная почта</label>
+                      <input type="email" tabindex="6" required>
+                    </div>
+                    <div class="xl-1-2">
+                      <label>Ваше имя</label>
+                      <input type="text" tabindex="9">
+                    </div>
+                  </div>
                 </div>
                 <div class="pair gutter-30">
                   <div class="row">
@@ -91,10 +99,6 @@
                       <input type="password" tabindex="8" required>
                     </div>
                   </div>
-                </div>
-                <div class="pair">
-                  <label>Ваше имя</label>
-                  <input type="text" tabindex="9">
                 </div>
                 <div class="pair table">
                   <div class="col xl-5-10">

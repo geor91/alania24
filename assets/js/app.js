@@ -1,3 +1,4 @@
+// INITS
 $(document).ready(function() {
 	// init slider on gallery page
 	$('#sliderID').owlCarousel({
@@ -22,3 +23,12 @@ $(document).ready(function() {
 		touchDrag: false
 	});
 });
+
+// EVENTS
+	// переключение между формами авторизации, регистрации
+		// $('a.div-trigger').on('click', function(e) {
+		// 	var divID = $(this).attr('href');
+		// 	$(this).parents('.auth-form').removeClass('active');
+		// 	$(divID).addClass('active');
+		// 	e.preventDefault();
+		// });

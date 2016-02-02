@@ -226,6 +226,14 @@ textarea {
   min-height: 150px;
 }
 
+.single-form {
+  padding: 30px;
+  padding: 3rem;
+  border: 1px solid #D7D7D7;
+  -webkit-box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.1);
+          box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.1);
+}
+
 .button {
   padding: 13px 33px;
   padding: 1.3rem 3.3rem;
@@ -414,6 +422,36 @@ textarea {
 
 .xl-12 > * {
   width: 8.33333%;
+}
+
+.xl-left {
+  -webkit-justify-content: flex-start;
+  -ms-justify-content: flex-start;
+  -webkit-box-pack: start;
+     -moz-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  text-align: left;
+}
+
+.xl-center {
+  -webkit-justify-content: center;
+  -ms-justify-content: center;
+  -webkit-box-pack: center;
+     -moz-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  text-align: center;
+}
+
+.xl-right {
+  -webkit-justify-content: flex-end;
+  -ms-justify-content: flex-end;
+  -webkit-box-pack: end;
+     -moz-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  text-align: right;
 }
 
 .xl-1-1 {
@@ -771,6 +809,12 @@ ul {
 
 .pull-right {
   float: right;
+}
+
+.pull-auto {
+  margin-left: auto;
+  margin-right: auto;
+  float: none;
 }
 
 .text-left {
@@ -1724,6 +1768,7 @@ header .logo img {
 footer {
   height: 260px;
   max-width: 1200px;
+  min-width: 960px;
   margin: 9px auto 0;
   padding: 25px 0 100px;
   border-top: 2px solid #000;
@@ -1811,11 +1856,13 @@ footer .tag-links a:hover span {
 }
 
 .auth-area {
-  width: 100%;
+  display: block;
   margin-bottom: 40px;
   margin-bottom: 4rem;
-  padding: 40px 0;
-  padding: 4rem 0;
+  padding-top: 40px;
+  padding-top: 4rem;
+  padding-bottom: 40px;
+  padding-bottom: 4rem;
   font-family: hn, arial, serif;
 }
 
@@ -1843,10 +1890,11 @@ footer .tag-links a:hover span {
 
 .auth-area fieldset legend {
   font-family: hb, arial, serif;
-  font-size: 30px;
-  font-size: 3rem;
+  font-size: 28px;
+  font-size: 2.8rem;
   margin-bottom: 25px;
   margin-bottom: 2.5rem;
+  color: #333;
 }
 
 .auth-area fieldset .button-submit {
