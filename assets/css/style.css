@@ -1902,6 +1902,14 @@ footer .tag-links a:hover span {
   min-width: 17rem;
 }
 
+.auth-area .auth-form {
+  display: none;
+}
+
+.auth-area .auth-form.active {
+  display: block;
+}
+
 @media screen and (max-width: 1219px) {
   html {
     font-size: 9px;

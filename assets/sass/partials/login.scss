@@ -22,4 +22,10 @@
 			@include rem(min-width, 170px);
 		}
 	}
+	.auth-form {
+		display:none;
+		&.active {
+			display:block;
+		}
+	}
 }

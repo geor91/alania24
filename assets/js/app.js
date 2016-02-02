@@ -26,9 +26,9 @@ $(document).ready(function() {
 
 // EVENTS
 	// переключение между формами авторизации, регистрации
-		// $('a.div-trigger').on('click', function(e) {
-		// 	var divID = $(this).attr('href');
-		// 	$(this).parents('.auth-form').removeClass('active');
-		// 	$(divID).addClass('active');
-		// 	e.preventDefault();
-		// });
+		$('.auth-area a.trigger').on('click', function(e) {
+			var divID = $(this).attr('href');
+			$(this).parents('.auth-area').find('.auth-form').removeClass('active');
+			$(divID).addClass('active');
+			e.preventDefault();
+		});
