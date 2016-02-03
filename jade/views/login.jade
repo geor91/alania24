@@ -1,10 +1,11 @@
 extends ../layouts/default.jade
 block content
-	.auth-area.single-form
-		.row
-			form.xl-4-11#loginForm
+	.auth-area
+		#singinForm.auth-form.active.single-form.xl-6-10.pull-auto
+			form
 				fieldset
 					legend Войти
+					.alert.alert-success Lorem ipsum dolor sit amet.
 					.pair
 						label Электронная почта
 						input(type="email", tabindex="1", required)
@@ -19,9 +20,13 @@ block content
 								span Запомнить меня
 						.col.text-right
 							button.button.button-submit(tabindex="4") Войти
-					a.link(href="#", tabindex="5") Забыли пароль?
-
-			form.xl-7-11#regForm
+					.pair
+						a.link.trigger(href="#resetPassForm", tabindex="5") Забыли пароль?
+					.pair
+						a.link.trigger(href="#signupForm", tabindex="6") Регистрация
+			
+		#signupForm.auth-form.single-form.xl-6-10.pull-auto
+			form
 				fieldset
 					legend Регистрация на сайте
 					.pair.gutter-30
@@ -31,15 +36,15 @@ block content
 								input(type="email", tabindex="6", required)
 							.xl-1-2
 								label Ваше имя
-								input(type="text", tabindex="9")
+								input(type="text", tabindex="7")
 					.pair.gutter-30
 						.row
 							.xl-1-2
 								label Пароль
-								input(type="password", tabindex="7", required)
+								input(type="password", tabindex="8", required)
 							.xl-1-2
 								label Пароль
-								input(type="password", tabindex="8", required)
+								input(type="password", tabindex="9", required)
 					.pair.table
 						.col.xl-5-10
 							label.checkbox
@@ -47,3 +52,17 @@ block content
 								span Я согласен с правилами регистрации и конфиденциальности
 						.col.xl-4-10.text-right
 							button.button.button-primary(tabindex="11") Зарегистрироваться
+					.pair
+						a.link.trigger(href="#singinForm", tabindex="6") Вернуться к авторизации
+
+		#resetPassForm.auth-form.single-form.xl-6-10.pull-auto
+			form
+				fieldset
+					legend Восстановление пароля
+					.pair
+						label Укажите Вашу почту и мы отправим Вам ссылку для сброса пароля.
+						input(type="email", tabindex="1")
+					.pair			        
+						button.button.button-submit(type="submit", tabindex="2") Отправить
+					.pair
+						a.link.trigger(href="#singinForm", tabindex="6") Вернуться к авторизации

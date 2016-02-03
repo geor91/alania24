@@ -4,8 +4,8 @@ $(document).ready(function() {
 	$('#sliderID').owlCarousel({
 		dots: false,
 		items: 1,
-		loop: true,
-		nav: true,
+		loop: $('#sliderID').children().length > 1,
+		nav: $('#sliderID').children().length > 1,
 		navSpeed: 300,
 		navText: false
 	});
@@ -18,7 +18,7 @@ $(document).ready(function() {
 		autoplayTimeout: 6000,
 		dots: false,
 		items: 1,
-		loop: true,
+		loop: $('#hot-news-slider').children().length > 1,
 		mouseDrag: false,
 		touchDrag: false
 	});

@@ -230,8 +230,6 @@ textarea {
   padding: 30px;
   padding: 3rem;
   border: 1px solid #D7D7D7;
-  -webkit-box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.1);
-          box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.1);
 }
 
 .button {
@@ -348,6 +346,45 @@ textarea {
 .checkbox input[type="checkbox"]:focus + span:before {
   -webkit-box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5);
           box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5);
+}
+
+.alert {
+  display: inline-block;
+  padding: 15px;
+  margin-bottom: 20px;
+  border: 1px solid transparent;
+}
+
+.alert i.fa + span {
+  margin-left: 5px;
+}
+
+.alert.alert-fluid {
+  display: block;
+}
+
+.alert.alert-success {
+  background-color: #dff0d8;
+  border-color: #d6e9c6;
+  color: #3c763d;
+}
+
+.alert.alert-info {
+  background-color: #d9edf7;
+  border-color: #bce8f1;
+  color: #31708f;
+}
+
+.alert.alert-warning {
+  background-color: #fcf8e3;
+  border-color: #faebcc;
+  color: #8a6d3b;
+}
+
+.alert.alert-error {
+  background-color: #f2dede;
+  border-color: #ebccd1;
+  color: #a94442;
 }
 
 /*! Flexible Grid System 5.4.0 | Scss Plus | MIT License | flexible.gs */
@@ -1204,15 +1241,15 @@ header .logo img {
   max-width: 1200px;
   min-height: 100%;
   margin: 0 auto;
-  margin-bottom: -260px;
-  padding: 100px 0 0;
+  margin-bottom: -200px;
+  padding: 10px 0 0;
   min-width: 960px;
 }
 
 .page-wrap:after {
   content: "";
   display: block;
-  height: 260px;
+  height: 200px;
 }
 
 .page-container {
@@ -1766,11 +1803,11 @@ header .logo img {
 }
 
 footer {
-  height: 260px;
+  height: 200px;
   max-width: 1200px;
   min-width: 960px;
   margin: 9px auto 0;
-  padding: 25px 0 100px;
+  padding: 25px 0;
   border-top: 2px solid #000;
   font-family: hn, arial, serif;
   color: #B9B9B9;

@@ -48,11 +48,12 @@
         </nav>
       </header>
       <div class="page-container">
-        <div class="auth-area single-form">
-          <div class="row">
-            <form id="loginForm" class="xl-4-11">
+        <div class="auth-area">
+          <div id="singinForm" class="auth-form active single-form xl-6-10 pull-auto">
+            <form>
               <fieldset>
                 <legend>Войти</legend>
+                <div class="alert alert-success">Lorem ipsum dolor sit amet.</div>
                 <div class="pair">
                   <label>Электронная почта</label>
                   <input type="email" tabindex="1" required>
@@ -70,10 +71,14 @@
                   <div class="col text-right">
                     <button tabindex="4" class="button button-submit">Войти</button>
                   </div>
-                </div><a href="#" tabindex="5" class="link">Забыли пароль?</a>
+                </div>
+                <div class="pair"><a href="#resetPassForm" tabindex="5" class="link trigger">Забыли пароль?</a></div>
+                <div class="pair"><a href="#signupForm" tabindex="6" class="link trigger">Регистрация</a></div>
               </fieldset>
             </form>
-            <form id="regForm" class="xl-7-11">
+          </div>
+          <div id="signupForm" class="auth-form single-form xl-6-10 pull-auto">
+            <form>
               <fieldset>
                 <legend>Регистрация на сайте</legend>
                 <div class="pair gutter-30">
@@ -84,7 +89,7 @@
                     </div>
                     <div class="xl-1-2">
                       <label>Ваше имя</label>
-                      <input type="text" tabindex="9">
+                      <input type="text" tabindex="7">
                     </div>
                   </div>
                 </div>
@@ -92,11 +97,11 @@
                   <div class="row">
                     <div class="xl-1-2">
                       <label>Пароль</label>
-                      <input type="password" tabindex="7" required>
+                      <input type="password" tabindex="8" required>
                     </div>
                     <div class="xl-1-2">
                       <label>Пароль</label>
-                      <input type="password" tabindex="8" required>
+                      <input type="password" tabindex="9" required>
                     </div>
                   </div>
                 </div>
@@ -110,6 +115,22 @@
                     <button tabindex="11" class="button button-primary">Зарегистрироваться</button>
                   </div>
                 </div>
+                <div class="pair"><a href="#singinForm" tabindex="6" class="link trigger">Вернуться к авторизации</a></div>
+              </fieldset>
+            </form>
+          </div>
+          <div id="resetPassForm" class="auth-form single-form xl-6-10 pull-auto">
+            <form>
+              <fieldset>
+                <legend>Восстановление пароля</legend>
+                <div class="pair">
+                  <label>Укажите Вашу почту и мы отправим Вам ссылку для сброса пароля.</label>
+                  <input type="email" tabindex="1">
+                </div>
+                <div class="pair">			        
+                  <button type="submit" tabindex="2" class="button button-submit">Отправить</button>
+                </div>
+                <div class="pair"><a href="#singinForm" tabindex="6" class="link trigger">Вернуться к авторизации</a></div>
               </fieldset>
             </form>
           </div>
