@@ -919,6 +919,11 @@ ul {
   font-size: 1.4rem;
 }
 
+.fa-icon i.fa {
+  margin-right: 5px;
+  margin-right: 0.5rem;
+}
+
 .poster {
   position: relative;
   font-size: 0;
@@ -1004,8 +1009,10 @@ ul {
 
 .pagination {
   width: 100%;
-  margin: 0 0 30px 30px;
+  margin-bottom: 30px;
+  margin-bottom: 3rem;
   padding-top: 20px;
+  padding-top: 2rem;
   border-top: 1px solid #D7D7D7;
 }
 
@@ -1021,6 +1028,7 @@ ul {
 .pagination li a {
   display: block;
   padding: 5px 10px;
+  padding: 0.5rem 1rem;
   border: 1px solid #B9B9B9;
   font-family: hn, arial, serif;
   font-size: 14px;

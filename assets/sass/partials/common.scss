@@ -92,7 +92,6 @@ ul {
 		vertical-align: middle;
 	}
 }
-
 .banner {
 	@include rem(margin-bottom, 30px);
 
@@ -106,7 +105,6 @@ ul {
 		width: auto;
 	}
 }
-
 .table {
 	display: table;
 	width: 100%;
@@ -118,6 +116,21 @@ ul {
 }
 .gutter-30 {
 	@include wrap(30px);
+}
+.fa-icon {
+	// если просто иконка + текст
+	i.fa {
+		@include rem(margin-right, 5px);
+	}
+	// если иконка + какой-либо эл-т
+	// i.fa + span,
+	// i.fa + .fa-caption {
+	// 	@include rem(margin-left, 5px);
+	// }
+	// span ~ i.fa,
+	// .fa-caption ~ i.fa {
+	// 	margin-right: 0;
+	// }
 }
 
 .poster {
@@ -170,7 +183,6 @@ ul {
 		}
 	}
 }
-
 .split-content {
 	@include wrap();
 	@include rem(margin-bottom, -25px); // убираем отступы от дочерних элементов
@@ -190,11 +202,10 @@ ul {
 		border-left: 1px solid $color-gray-5;
 	}
 }
-
 .pagination {
 	width: 100%;
-	margin: 0 0 30px 30px;
-	padding-top: 20px;
+	@include rem(margin-bottom, 30px);
+	@include rem(padding-top, 20px);
 	border-top: 1px solid $color-gray-5;
 
 	ul {
@@ -206,7 +217,7 @@ ul {
 
 		a {
 			display: block;
-			padding: 5px 10px;
+			@include rem(padding, 5px 10px);
 			border: 1px solid $color-gray-4;
 			@include font-family(hn);
 			font-size: 14px;
