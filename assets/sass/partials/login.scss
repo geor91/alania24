@@ -1,10 +1,5 @@
 .auth-area {
-	display: block;
-	@include wrap($gutter: 60px);
-	@include rem(margin-bottom, 40px);
-	@include rem(padding-top, 40px);
-	@include rem(padding-bottom, 40px);
-	@include font-family(hn);
+	@extend .single-content;
 
 	fieldset {
 		border: 0;
@@ -12,10 +7,7 @@
 		margin: 0;
 
 		legend {
-			@include font-family(hb);
-			@include rem(font-size, 28px);
-			@include rem(margin-bottom, 25px);
-			color: #333;
+			@extend .panel-title;
 		}
 
 		.button-submit {

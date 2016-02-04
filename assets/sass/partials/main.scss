@@ -21,6 +21,15 @@
 	@extend .clrfix;
 	@include wrap();
 }
+
 .page-content {
 	@include wrap();
+}
+
+.single-content {
+	display: block;
+	@include rem(margin-bottom, 40px);
+	@include rem(padding-top, 40px);
+	@include rem(padding-bottom, 40px);
+	@include font-family(hn);
 }

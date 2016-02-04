@@ -37,6 +37,9 @@ footer {
 			& + a {
 				margin-left: 10px;
 			}
+			&:hover {
+				color: #666;
+			}
 		}
 		i.fa {
 			font-size: 20px;
