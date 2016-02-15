@@ -1,0 +1,20 @@
+.main-navbar {
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: -$navbar-width;
+	width: $navbar-width;
+	@include rem(padding, 40px 55px);
+	background-color: $color-blue;
+	z-index: 10;
+}
+.navbar-overlay {
+	display: none;
+	position: absolute;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	background: rgba(0,0,0, .1);
+	z-index: 10;
+}

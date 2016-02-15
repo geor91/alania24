@@ -1,0 +1,17 @@
+include ../includes/vars.jade
+doctype html
+html
+	head
+		include ../includes/mobile/head.jade
+		block head
+	body
+		.page-container#main-container
+			include ../includes/mobile/navbar.jade
+			include ../includes/mobile/header.jade
+			.page-content
+				block content
+			include ../includes/mobile/footer.jade
+
+	include ../includes/scripts.jade
+	block scripts
+		script(src="/assets/js/mobile.js")

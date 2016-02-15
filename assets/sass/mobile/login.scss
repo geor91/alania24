@@ -1,0 +1,23 @@
+.auth-area {
+	@extend .single-content;
+
+	fieldset {
+		border: 0;
+		padding: 0;
+		margin: 0;
+
+		legend {
+			@extend .panel-title;
+		}
+
+		.button-submit {
+			@include rem(min-width, 170px);
+		}
+	}
+	.auth-form {
+		display:none;
+		&.active {
+			display:block;
+		}
+	}
+}

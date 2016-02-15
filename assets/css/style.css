@@ -243,6 +243,7 @@ textarea {
 .button:hover, .button:focus {
   background-color: #4c4c4c;
   border-color: #1e1e1e;
+  text-decoration: none;
 }
 
 .button.button-primary {
@@ -1282,12 +1283,12 @@ header .logo img {
 .top-nav li a {
   position: relative;
   display: inline-block;
-  padding: 11px 10px;
-  padding: 11px 1rem;
+  padding: 11px;
+  padding: 1.1rem;
   border-bottom: 2px solid transparent;
   font-family: hb, arial, serif;
-  font-size: 19px;
-  font-size: 1.9rem;
+  font-size: 17px;
+  font-size: 1.7rem;
   text-transform: uppercase;
   color: #2980B9;
   -webkit-transition: color .3s;
@@ -1322,7 +1323,8 @@ header .logo img {
   min-height: 100%;
   margin: 0 auto;
   margin-bottom: -200px;
-  padding: 10px 0 0;
+  padding-top: 40px;
+  padding-top: 4rem;
   min-width: 960px;
 }
 
