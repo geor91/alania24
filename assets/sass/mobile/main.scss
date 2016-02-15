@@ -3,6 +3,7 @@
 	transition: transform .3s;
 
 	&.expanded {
+		height: 100%;
 		transform: translate(80%);
 
 		.navbar-overlay {
@@ -12,4 +13,6 @@
 }
 .page-content {
 	border-top: 2px solid #000;
+	border-bottom: 1px solid $color-gray-5;
+	padding-bottom: 40px;
 }

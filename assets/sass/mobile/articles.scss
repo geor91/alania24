@@ -1,278 +1,108 @@
 .post {
+	@include rem(margin-bottom, 30px);
+
 	.post-image {
-		margin-bottom: 14px;
-		img {
-			width: 100%;
-		}
+		display: block;
+		@include rem(height, 270px);
+		background-repeat: no-repeat;
+		background-position: 0 0;
+		background-size: cover;
+		font-size: 0;
 	}
-	.post-rubric {
-		margin-bottom: 8px;
-		@include font-family(hn);
-		font-size: 16px;
-		color: $color-blue-2;
-	}
-	.post-date {
-		margin-bottom: 9px;
-		@include font-family(hn);
-		font-size: 9px;
-		line-height: 11px;
-		color: $color-gray-3;
-	}
-	.post-title {
-		margin-bottom: 16px;
-		@include font-family(hb);
-		font-size: 20px;
-		line-height: 21px;
-		color: #151515;
-		cursor: pointer;
-
-		a {
-			display: block;
+		.post-image-caption {
+			display: inline-block;
+			margin-top: 4px;
+			@include rem(padding, 0 10px);
+			@include font-family(hn);
+			font-size: 9px;
+			line-height: 1.2;
+			color: $color-gray-4;
 		}
-
-		&:hover {
-			color: $color-blue;
-			a {
-				text-decoration: none;
-			}
-		}
-	}
-	.post-content {
-		color: $color-gray-2;
-
-		p {
-			font-size: 14px;
-			line-height: 18px;
-			color: rgba($color-gray, .89);
-		}
-		p + p {
-			margin-top: 10px;
-		}
-	}
-	// обертка для всех полей новости
+	// обертка для описания новости
 	.post-desc {
-		padding-left: 15px;
-		border-left: 1px solid $color-gray-5;
+		@include rem(margin-top, 20px);
+		@include rem(padding, 0 30px);
 	}
-	.post-add-info {
-		margin: 9px 0 15px;
-		@include font-family(hn);
-		font-size: 9px;
-		line-height: 11px;
-		color: $color-blue-2;
-
-		i.fa {
-			margin-right: 12px;
-			font-size: 23px;
-			color: #000;
-			vertical-align: middle;
+		// post meta data
+		.post-meta {
+			@include table(middle);
+			@include rem(margin-bottom, 20px);
 		}
-		.item {
-			vertical-align: middle;
+			.post-rubric {
+				margin-bottom: 8px;
+				@include font-family(hn);
+				font-size: 23px;
+				color: $color-blue-2;
+			}
+			.post-date {
+				margin-bottom: 9px;
+				text-align: right;
+				@include font-family(hn);
+				font-size: 16px;
+				line-height: 1.2;
+				color: $color-gray-3;
+			}
+			// блок доп инф-ции (напр-р, кол-во комментариев)
+			.post-add-info {
+				margin: 9px 0 15px;
+				@include font-family(hn);
+				font-size: 9px;
+				line-height: 11px;
+				color: $color-blue-2;
+
+				i.fa {
+					margin-right: 12px;
+					font-size: 23px;
+					color: #000;
+					vertical-align: middle;
+				}
+				.item {
+					vertical-align: middle;
+
+					&:hover {
+						i {
+							color: $color-blue-2;
+						}
+					}
+				}
+			}
+
+		.post-title {
+			clear: both;
+			margin-bottom: 16px;
+			@include font-family(hb);
+			font-size: 30px;
+			line-height: 1.2;
+			color: #151515;
+			cursor: pointer;
+
+			a {
+				display: block;
+			}
 
 			&:hover {
-				i {
-					color: $color-blue-2;
+				color: $color-blue;
+				a {
+					text-decoration: none;
 				}
 			}
 		}
-	}
+		.post-content {
+			color: $color-gray-2;
+
+			p {
+				font-size: 20px;
+				line-height: 1.2;
+				color: rgba($color-gray, .89);
+			}
+			p + p {
+				margin-top: 10px;
+			}
+		}
 	.post-author {
 		@include rem(margin, 20px 0);
 		@include rem(font-size, 14px);
 		line-height: 1.2;
 		color: $color-gray-3;
-	}
-	.post-gallery {
-		@include rem(padding, 0 55px);
-		@include rem(margin-bottom, 25px);
-	
-		.poster {
-			@include rem(height, 450px);
-			padding-bottom: 20px;
-
-			img {
-				width: auto;
-				min-width: 100%;
-				height: 100%;
-			}
-		}
-
-		.owl-prev,
-		.owl-next {
-			position: absolute;
-			top: 50%;
-			left: 5px;
-			width: 33px;
-			height: 55px;
-			margin-top: -27px;
-			background: url(../../assets/images/gallery-arrows-sprite.png) no-repeat left;
-			transition: opacity .3s;
-			opacity: .6;
-
-			&:hover {
-				opacity: .9;
-			}
-		}
-		.owl-next {
-			left: auto;
-			right: 5px;
-			background-position: right;
-		}
-	}
-
-	// закрепленный пост
-	&.post-sticky {
-		@include rem(margin-bottom, 30px);
-		@include rem(padding-bottom, 25px);
-		border-bottom: 1px solid $color-gray-5;
-
-		.post-image{
-			width: 50%;
-			@include rem(margin, 0 30px 30px 0);
-			float: left;
-		}
-
-		.post-title {
-			margin: 14px 0 11px;
-			@include rem(font-size, 30px);
-			line-height: 1.1;
-			color: #151515;
-
-			a:hover {
-				text-decoration: none;
-			}
-		}
-
-		.post-content {
-			clear: both;
-			color: $color-gray;
-
-			p {
-				font-size: 16px;
-				line-height: 20px;
-			}
-		}
-	}
-
-	// пост по ширине страницы
-	&.sinle-post {
-		.post-image {
-			position: relative;
-			@include rem(margin-bottom, 20px);
-			cursor: pointer;
-
-			&:before {
-				content: '';
-				position: absolute;
-				top: 0;
-				left: 0;
-				right: 0;
-				bottom: 17px;
-				background-color: #000;
-				opacity: 0;
-				transition: opacity .3s;
-			}
-
-			.post-image-zoom {
-				position: absolute;
-				bottom: 17px;
-				right: 0;
-				width: 75px;
-				height: 75px;
-				cursor: pointer;
-
-				&:before {
-					content: '';
-					position: absolute;
-					bottom: 0;
-					right: 0;
-					border-style: solid;
-					border-width: 0 0 74px 74px;
-					border-color: transparent transparent $color-bg-body transparent;
-
-					// transition: all .3s;
-				}
-
-				&:after {
-					content: '';
-					display: block;
-					position: absolute;
-					right: 5px;
-					bottom: 5px;
-					width: 20px;
-					height: 20px;
-					background: none;
-					border: 0;
-					border-right: 4px solid #000;
-					border-bottom: 4px solid #000;
-
-					transition: all .3s;
-				}
-			}
-			&:hover {
-				&:before {
-					opacity: .3;
-				}
-				.post-image-zoom:before {
-					// border-width: 0 0 90px 90px;
-					// border-color: transparent transparent #DBCCC4 transparent;
-				}
-				.post-image-zoom:after {
-					// opacity: .7;
-					// width: 23px;
-					// height: 23px;
-				}
-			}
-		}
-
-		.post-content {
-			@include rem(margin-bottom, 30px);
-			border-bottom: 1px solid rgba(0,0,0, .1);
-			p {
-				font-size: 16px;
-				line-height: 20px;
-			}
-		}
-	}
-
-	// страница с постом
-	&.post-full {
-		p {
-			line-height: 1.2;
-			@include rem(margin-bottom, 20px);
-		}
-		.post-meta {
-			margin-bottom: 16px;
-		}
-		> .post-title {
-			@include rem(margin, 20px 0);
-			@include rem(font-size, 30px);
-		}
-		.post-excerpt {
-			@include rem(margin-bottom, 23px);
-			@include rem(padding, 0 23px 0 170px);
-			@include rem(font-size, 16px);
-			line-height: 1.3;
-			color: $color-gray;
-		}
-		> .post-desc {
-			@include rem(margin-bottom, 23px);
-			@include rem(padding, 0 23px 23px 170px);
-			@include rem(font-size, 19px);
-			color: #262626;
-			border: 0;
-		}
-		.embed-wrap {
-			@include rem(margin-bottom, 20px);
-		}
-	}
-
-	// встраиваемый пост в текст записи
-	.post-embed {
-		float: left;
-		@include rem(width, 290px);
-		@include rem(margin-left, -170px);
-		@include rem(padding, 0 30px 15px 0);
 	}
 }

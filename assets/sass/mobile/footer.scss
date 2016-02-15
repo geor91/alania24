@@ -1,31 +1,30 @@
 footer {
 	height: $footer-height;
-	max-width: 1200px;
-	min-width: 960px;
 	margin: 9px auto 0;
-	padding: 25px 0;
+	@include rem(padding, 35px 50px);
 	border-top: 2px solid #000;
 	@include font-family(hn);
 	color: $color-gray-4;
 
 	.copyright {
-		@include rem(margin-bottom, 20px);
-		font-size: 11px;
-		line-height: 13px;
+		@include rem(margin-bottom, 30px);
+		font-size: 20px;
 		color: $color-gray-4;
 	}
 	.social {
 		a {
 			display: inline-block;
+			color: #ccc;
+
 			& + a {
-				margin-left: 10px;
+				margin-left: 30px;
 			}
 			&:hover {
 				color: #666;
 			}
 		}
 		i.fa {
-			font-size: 20px;
+			font-size: 40px;
 		}
 	}
 	.counters {

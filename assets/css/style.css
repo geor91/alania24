@@ -112,8 +112,7 @@ button, select {
   text-transform: none;
 }
 
-button, html input[type="button"],
-input[type="reset"], input[type="submit"] {
+button, html input[type="button"], input[type="reset"], input[type="submit"] {
   -webkit-appearance: button;
   cursor: pointer;
 }
@@ -156,7 +155,7 @@ input[type="search"]::-webkit-search-cancel-button, input[type="search"]::-webki
 fieldset {
   border: 1px solid silver;
   margin: 0 2px;
-  padding: .35em .625em .75em;
+  padding: 0.35em 0.625em 0.75em;
 }
 
 legend {
@@ -236,11 +235,13 @@ textarea {
   font-size: 14px;
   font-size: 1.4rem;
   color: #fff;
-  -webkit-transition: border-color .3s, background-color .3s;
-  transition: border-color .3s, background-color .3s;
+  -webkit-transition: border-color 0.3s, background-color 0.3s;
+       -o-transition: border-color 0.3s, background-color 0.3s;
+          transition: border-color 0.3s, background-color 0.3s;
 }
 
-.button:hover, .button:focus {
+.button:hover,
+.button:focus {
   background-color: #4c4c4c;
   border-color: #1e1e1e;
   text-decoration: none;
@@ -251,7 +252,8 @@ textarea {
   border-color: #164666;
 }
 
-.button.button-primary:hover, .button.button-primary:focus {
+.button.button-primary:hover,
+.button.button-primary:focus {
   background-color: #2c89c6;
   border-color: #1b557a;
 }
@@ -458,6 +460,7 @@ textarea {
   -webkit-justify-content: flex-start;
   -ms-justify-content: flex-start;
   -webkit-box-pack: start;
+     -moz-box-pack: start;
       -ms-flex-pack: start;
           justify-content: flex-start;
   text-align: left;
@@ -467,6 +470,7 @@ textarea {
   -webkit-justify-content: center;
   -ms-justify-content: center;
   -webkit-box-pack: center;
+     -moz-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
   text-align: center;
@@ -476,6 +480,7 @@ textarea {
   -webkit-justify-content: flex-end;
   -ms-justify-content: flex-end;
   -webkit-box-pack: end;
+     -moz-box-pack: end;
       -ms-flex-pack: end;
           justify-content: flex-end;
   text-align: right;
@@ -860,7 +865,7 @@ ul {
   list-style: none;
 }
 
-.clrfix:after, .page-container:after, .page-sidebar .news-list li:after, .comments .comments-list .comment-meta:after {
+.clrfix:after, .news-list li:after, .page-container:after, .comments .comments-list .comment-meta:after {
   content: '';
   display: table;
   clear: both;
@@ -900,6 +905,39 @@ ul {
 .v-middle > * {
   display: inline-block;
   vertical-align: middle;
+}
+
+.news-list li {
+  position: relative;
+  margin-bottom: 18px;
+  display: table;
+}
+
+.news-list li > * {
+  display: table-cell;
+  vertical-align: top;
+}
+
+.news-list li .news-date {
+  padding: 3px 20px 0 0;
+  font-family: hn, arial, serif;
+  font-size: 12px;
+  color: #9B9B9B;
+}
+
+.news-list li .news-title {
+  font-size: inherit;
+  font-family: hn, arial, serif;
+  line-height: 1.3;
+  color: #444;
+}
+
+.news-list li .news-title a {
+  display: inline-block;
+}
+
+.news-list li:last-child {
+  margin-bottom: 0;
 }
 
 .banner {
@@ -1044,8 +1082,9 @@ ul.list.list-indented {
   right: 0;
   bottom: 0;
   background-color: rgba(0, 0, 0, 0.3);
-  -webkit-transition: background-color .4s;
-  transition: background-color .4s;
+  -webkit-transition: background-color 0.4s;
+       -o-transition: background-color 0.4s;
+          transition: background-color 0.4s;
 }
 
 .poster.poster-overlay:hover:before {
@@ -1112,8 +1151,9 @@ ul.list.list-indented {
   font-size: 14px;
   text-align: center;
   color: #000;
-  -webkit-transition: all .3s;
-  transition: all .3s;
+  -webkit-transition: all 0.3s;
+       -o-transition: all 0.3s;
+          transition: all 0.3s;
   opacity: .6;
 }
 
@@ -1291,8 +1331,9 @@ header .logo img {
   font-size: 1.7rem;
   text-transform: uppercase;
   color: #2980B9;
-  -webkit-transition: color .3s;
-  transition: color .3s;
+  -webkit-transition: color 0.3s;
+       -o-transition: color 0.3s;
+          transition: color 0.3s;
 }
 
 .top-nav li a:before {
@@ -1304,17 +1345,20 @@ header .logo img {
   height: 8px;
   background: #233C54;
   opacity: 0;
-  -webkit-transition: opacity .3s;
-  transition: opacity .3s;
+  -webkit-transition: opacity 0.3s;
+       -o-transition: opacity 0.3s;
+          transition: opacity 0.3s;
 }
 
-.top-nav li a:hover, .top-nav li a.active {
+.top-nav li a:hover,
+.top-nav li a.active {
   color: #2472a4;
   color: #233C54;
   text-decoration: none;
 }
 
-.top-nav li a:hover:before, .top-nav li a.active:before {
+.top-nav li a:hover:before,
+.top-nav li a.active:before {
   opacity: 1;
 }
 
@@ -1418,47 +1462,6 @@ header .logo img {
 .page-sidebar .widget.widget-blinded .widget-content {
   font-size: 17px;
   font-size: 1.7rem;
-}
-
-.page-sidebar .news-list li {
-  position: relative;
-  margin-bottom: 18px;
-  display: table;
-}
-
-.page-sidebar .news-list li > * {
-  display: table-cell;
-  vertical-align: top;
-}
-
-.page-sidebar .news-list li .news-date {
-  padding: 3px 20px 0 0;
-  font-family: hn, arial, serif;
-  font-size: 12px;
-  color: #9B9B9B;
-}
-
-.page-sidebar .news-list li .news-title {
-  font-size: inherit;
-  font-family: hn, arial, serif;
-  line-height: 1.3;
-  color: #444;
-}
-
-.page-sidebar .news-list li .news-title a {
-  display: inline-block;
-}
-
-.page-sidebar .news-list li:last-child {
-  margin-bottom: 0;
-}
-
-.page-sidebar .random-image {
-  font-size: 0;
-}
-
-.page-sidebar .random-image img {
-  width: 100%;
 }
 
 .page-sidebar .post {
@@ -1609,8 +1612,9 @@ header .logo img {
   height: 55px;
   margin-top: -27px;
   background: url(../../assets/images/gallery-arrows-sprite.png) no-repeat left;
-  -webkit-transition: opacity .3s;
-  transition: opacity .3s;
+  -webkit-transition: opacity 0.3s;
+       -o-transition: opacity 0.3s;
+          transition: opacity 0.3s;
   opacity: .6;
 }
 
@@ -1678,8 +1682,9 @@ header .logo img {
   bottom: 17px;
   background-color: #000;
   opacity: 0;
-  -webkit-transition: opacity .3s;
-  transition: opacity .3s;
+  -webkit-transition: opacity 0.3s;
+       -o-transition: opacity 0.3s;
+          transition: opacity 0.3s;
 }
 
 .post.sinle-post .post-image .post-image-zoom {
@@ -1713,8 +1718,9 @@ header .logo img {
   border: 0;
   border-right: 4px solid #000;
   border-bottom: 4px solid #000;
-  -webkit-transition: all .3s;
-  transition: all .3s;
+  -webkit-transition: all 0.3s;
+       -o-transition: all 0.3s;
+          transition: all 0.3s;
 }
 
 .post.sinle-post .post-image:hover:before {

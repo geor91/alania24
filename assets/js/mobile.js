@@ -1,6 +1,5 @@
 $(function() {
 	$('.navbar-expander').on('click', function(e) {
-		e.preventDefault();
 		var $navbar = $('.page-container'),
 			$overlay = $('.navbar-overlay');
 
@@ -16,15 +15,10 @@ $(function() {
 			$overlay.hide();
 			$('body').removeClass('no-scroll');
 		}
+		e.preventDefault();
 	});
 
 	$('.navbar-overlay').click( function(e) {
-		$('.page-container').removeClass('expanded');
-		$('.navbar-overlay').hide();
-		$('body').removeClass('no-scroll');
-	});
-
-	$('.main-navbar').swipeleft(function(e) {
 		$('.page-container').removeClass('expanded');
 		$('.navbar-overlay').hide();
 		$('body').removeClass('no-scroll');

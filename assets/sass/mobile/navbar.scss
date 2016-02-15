@@ -1,3 +1,13 @@
+.navbar-overlay {
+	display: none;
+	position: absolute;
+	top: 8px;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	background: rgba(0,0,0, .1);
+	z-index: 10;
+}
 .main-navbar {
 	position: absolute;
 	top: 0;
@@ -5,16 +15,41 @@
 	left: -$navbar-width;
 	width: $navbar-width;
 	@include rem(padding, 40px 55px);
-	background-color: $color-blue;
+	background-color: $color-blue-2;
+	@include font-family(hn);
+	color: #fff;
+	overflow: auto;
 	z-index: 10;
-}
-.navbar-overlay {
-	display: none;
-	position: absolute;
-	top: 0;
-	right: 0;
-	bottom: 0;
-	left: 0;
-	background: rgba(0,0,0, .1);
-	z-index: 10;
+
+	.widget {
+		@include rem(margin-bottom, 60px);
+	}
+
+	.auth-block {
+		@include font-family(hl);
+		@include font-size(20px);
+	}
+
+	.nav {
+		@include font-family(hl);
+		@include font-size(20px);
+
+		.nav-title {
+			@include rem(margin-bottom, 30px);
+			text-transform: uppercase;
+		}
+		li {
+			display: block;
+			@include rem(margin-bottom, 10px);
+		}
+	}
+
+	.categories {
+		text-transform: uppercase;
+		@include font-family(hb);
+		@include font-size(25px);
+		li {
+			margin-bottom: 20px;
+		}
+	}
 }

@@ -1,17 +1,36 @@
 // header styles
 header {
+	position: relative;
 	margin-bottom: 2px;
 	@include rem(padding, 35px 0 30px);
 	border-top: 8px solid $color-blue-2;
 	@include font-family(hn);
 	border-bottom: 1px solid $color-gray-5;
 
+	.header-button {
+		$button-size: 40px;
+		position: absolute;
+		@include rem(top, 40px);
+		// top: 50%;
+		// @include rem(margin-top, (-$button-size/2));
+		@include rem(font-size, $button-size);
+		color: #4F83B8;
+
+		&.left-button {
+			left: 30px;
+		}
+		&.right-button {
+			right: 30px;
+		}
+	}
+
 	.logo {
 		text-align: center;
 		img {
-			@include rem(max-width, 376px);
+			@include rem(max-width, 303px);
 		}
 	}
+
 }
 .top-nav {
 	margin: 2px 0;
