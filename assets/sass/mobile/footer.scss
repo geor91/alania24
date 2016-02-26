@@ -1,14 +1,27 @@
 footer {
+	position: relative;
 	height: $footer-height;
-	margin: 9px auto 0;
-	@include rem(padding, 35px 50px);
+	@include rem(padding, 50px);
 	border-top: 2px solid #000;
 	@include font-family(hn);
 	color: $color-gray-4;
+	transition: transform .3s;
+
+	&:before {
+		content: '';
+		display: block;
+		position: absolute;
+		width: 100%;
+		top: -13px;
+		height: 1px;
+		background: #D7D7D7;
+		left: 0;
+	}
 
 	.copyright {
 		@include rem(margin-bottom, 30px);
-		font-size: 20px;
+		@include rem(font-size, 23px);
+		line-height: 1.2;
 		color: $color-gray-4;
 	}
 	.social {
@@ -24,7 +37,7 @@ footer {
 			}
 		}
 		i.fa {
-			font-size: 40px;
+			@include rem(font-size, 40px);
 		}
 	}
 	.counters {

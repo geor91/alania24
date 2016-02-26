@@ -1,5 +1,7 @@
 // common styles
 .page-container {
+	min-height: 100%;
+	margin-bottom: -$footer-height;
 	transition: transform .3s;
 
 	&.expanded {
@@ -9,10 +11,17 @@
 		.navbar-overlay {
 			display: block;
 		}
+		+ footer {
+			transform: translate(80%);
+		}
+	}
+	&:after {
+		content: "";
+		display: block;
+		height: $footer-height;
 	}
 }
 .page-content {
 	border-top: 2px solid #000;
-	border-bottom: 1px solid $color-gray-5;
 	padding-bottom: 40px;
 }

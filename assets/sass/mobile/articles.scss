@@ -31,14 +31,14 @@
 			.post-rubric {
 				margin-bottom: 8px;
 				@include font-family(hn);
-				font-size: 23px;
+				@include rem(font-size, 23px);
 				color: $color-blue-2;
 			}
 			.post-date {
 				margin-bottom: 9px;
 				text-align: right;
 				@include font-family(hn);
-				font-size: 16px;
+				@include rem(font-size, 16px);
 				line-height: 1.2;
 				color: $color-gray-3;
 			}
@@ -71,7 +71,7 @@
 			clear: both;
 			margin-bottom: 16px;
 			@include font-family(hb);
-			font-size: 30px;
+			@include rem(font-size, 30px);
 			line-height: 1.2;
 			color: #151515;
 			cursor: pointer;
@@ -91,7 +91,7 @@
 			color: $color-gray-2;
 
 			p {
-				font-size: 20px;
+				@include rem(font-size, 23px);
 				line-height: 1.2;
 				color: rgba($color-gray, .89);
 			}
