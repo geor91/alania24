@@ -1,4 +1,5 @@
 footer {
+	position: relative;
 	height: $footer-height;
 	max-width: 1200px;
 	min-width: 960px;
@@ -8,6 +9,17 @@ footer {
 	@include font-family(hn);
 	color: $color-gray-4;
 	@include wrap();
+
+	&:before {
+		content: '';
+		display: block;
+		position: absolute;
+		width: 100%;
+		top: -13px;
+		height: 1px;
+		background: #D7D7D7;
+		left: 0;
+	}
 
 	.footer-col {
 		width: 25%;

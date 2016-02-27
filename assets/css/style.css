@@ -208,7 +208,6 @@ textarea {
   outline: 1px solid transparent;
   font-size: 14px;
   color: #454545;
-  resize: vertical;
 }
 
 input[type="text"]:focus,
@@ -224,6 +223,61 @@ textarea:focus {
 
 textarea {
   min-height: 150px;
+  resize: vertical;
+}
+
+.input-group {
+  display: table;
+  position: relative;
+  width: 100%;
+  border-collapse: separate;
+}
+
+.input-group .input-group-control {
+  display: table-cell;
+  vertical-align: middle;
+  width: 100%;
+}
+
+.input-group .input-group-addon,
+.input-group .input-group-btn {
+  display: table-cell;
+  vertical-align: middle;
+  width: 1px;
+  padding: 6px 20px;
+  padding: 0.6rem 2rem;
+  background-color: #444;
+  color: #ddd;
+  -webkit-transition: all 0.3s;
+       -o-transition: all 0.3s;
+          transition: all 0.3s;
+}
+
+.input-group .input-group-addon:first-child,
+.input-group .input-group-btn:first-child {
+  border-right: 0;
+}
+
+.input-group .input-group-addon:last-child,
+.input-group .input-group-btn:last-child {
+  border-left: 0;
+}
+
+.input-group .input-group-addon:hover,
+.input-group .input-group-btn:hover {
+  background-color: #333;
+  color: #fff;
+}
+
+.input-group .input-group-btn {
+  padding: 0;
+}
+
+.input-group .input-group-btn button {
+  padding: 16px 20px;
+  padding: 1.6rem 2rem;
+  border: none;
+  background: none;
 }
 
 .button {
@@ -1295,7 +1349,6 @@ header .auth-block > a + a:before {
 header .logo {
   display: block;
   padding: 50px 0 40px;
-  border-bottom: 8px solid #4F83B8;
   text-align: center;
 }
 
@@ -1305,11 +1358,23 @@ header .logo img {
 }
 
 .top-nav {
-  margin: 2px 0;
+  position: relative;
+  margin: 11px 0 2px;
   border-top: 1px solid rgba(0, 0, 0, 0.15);
   border-bottom: 1px solid rgba(0, 0, 0, 0.15);
   text-align: center;
   white-space: nowrap;
+}
+
+.top-nav:before {
+  content: '';
+  display: block;
+  position: absolute;
+  top: -11px;
+  left: 0;
+  height: 8px;
+  width: 100%;
+  background: #4F83B8;
 }
 
 .top-nav ul {
@@ -1323,8 +1388,10 @@ header .logo img {
 .top-nav li a {
   position: relative;
   display: inline-block;
-  padding: 11px;
-  padding: 1.1rem;
+  line-height: 41px;
+  line-height: 4.1rem;
+  padding: 0 11px;
+  padding: 0 1.1rem;
   border-bottom: 2px solid transparent;
   font-family: hb, arial, serif;
   font-size: 17px;
@@ -1334,6 +1401,7 @@ header .logo img {
   -webkit-transition: color 0.3s;
        -o-transition: color 0.3s;
           transition: color 0.3s;
+  white-space: nowrap;
 }
 
 .top-nav li a:before {
@@ -1381,7 +1449,6 @@ header .logo img {
 .page-container {
   padding: 25px 0;
   border-top: 2px solid #000;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.15);
   font-size: 0;
 }
 
@@ -1405,7 +1472,7 @@ header .logo img {
   font-size: 1.4rem;
 }
 
-.single-content, .auth-area {
+.single-content, .search-content, .auth-area {
   display: block;
   margin-bottom: 40px;
   margin-bottom: 4rem;
@@ -1414,6 +1481,11 @@ header .logo img {
   padding-bottom: 40px;
   padding-bottom: 4rem;
   font-family: hn, arial, serif;
+}
+
+.search-content .posts-wrap {
+  margin-top: 30px;
+  margin-top: 3rem;
 }
 
 .page-sidebar.sidebar-left {
@@ -1899,6 +1971,7 @@ header .logo img {
 }
 
 footer {
+  position: relative;
   height: 200px;
   max-width: 1200px;
   min-width: 960px;
@@ -1916,6 +1989,17 @@ footer > * {
   vertical-align: top;
   font-size: 14px;
   font-size: 1.4rem;
+}
+
+footer:before {
+  content: '';
+  display: block;
+  position: absolute;
+  width: 100%;
+  top: -13px;
+  height: 1px;
+  background: #D7D7D7;
+  left: 0;
 }
 
 footer .footer-col {
