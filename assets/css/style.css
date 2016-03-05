@@ -1148,7 +1148,7 @@ ul.list.list-indented {
   border: 1px solid #D7D7D7;
 }
 
-.panel .panel-title, .single-form .panel-title, .panel .auth-area fieldset legend, .auth-area fieldset .panel legend, .single-form .auth-area fieldset legend, .auth-area fieldset .single-form legend {
+.panel-title, .auth-area fieldset legend {
   font-family: hb, arial, serif;
   font-size: 28px;
   font-size: 2.8rem;
@@ -1541,8 +1541,6 @@ header .logo img {
 
 .single-content, .search-content, .auth-area {
   display: block;
-  margin-bottom: 40px;
-  margin-bottom: 4rem;
   padding-top: 40px;
   padding-top: 4rem;
   padding-bottom: 40px;
@@ -1744,6 +1742,7 @@ header .logo img {
   top: 50%;
   left: 5px;
   width: 33px;
+  width: 3.3rem;
   height: 55px;
   margin-top: -27px;
   background: url(../../assets/images/gallery-arrows-sprite.png) no-repeat left;

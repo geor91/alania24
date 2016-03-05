@@ -1,5 +1,6 @@
 footer {
 	min-width: auto;
+	max-width: 100%;
 	@include rem(height, $footer-height-mobile);
 	margin: 0;
 	@include rem(padding, 40px);

@@ -1,11 +1,12 @@
 @import 'partials/vars';
 @import 'partials/mixins';
+@import 'mobile/forms';
 @import 'mobile/common';
 @import 'mobile/navbar';
 @import 'mobile/header';
 @import 'mobile/main';
 @import 'mobile/footer';
 @import 'mobile/articles';
-// @import 'mobile/comments';
-// @import 'mobile/login';
+@import 'mobile/comments';
+@import 'mobile/login';
 @import 'mobile/responsive';

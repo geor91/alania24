@@ -1,0 +1,12 @@
+// label + input block
+.pair {
+	// @include rem(margin-bottom, 5px);
+
+	label {
+		@include rem(font-size, 20px);
+		// @include rem(margin-bottom, 5px);
+	}
+	// & + .pair {
+	// 	@include rem(margin-top, 15px);
+	// }
+}

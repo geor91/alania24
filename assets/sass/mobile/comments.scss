@@ -1,0 +1,19 @@
+.comments {
+	padding: 0;
+
+	.comments-title {
+		@include rem(font-size, 23px);
+	}
+	.comments-list {
+		li {
+			@include rem(margin-bottom, 35px);
+		}
+		.comment-meta {
+			@include rem(font-size, 20px);
+		}
+		.comment-text {
+			@include rem(padding-left, 25px);
+			@include rem(font-size, 22px);
+		}
+	}
+}

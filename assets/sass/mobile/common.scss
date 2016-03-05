@@ -39,3 +39,15 @@ body {
 		@include rem(font-size, 20px);
 	}
 }
+.pagination {
+	@include rem(margin, 30px 0 20px);
+	@include rem(padding, 30px);
+
+	ul {
+		text-align: center;
+	}
+	
+	li {
+		margin: 0 9px;
+	}
+}

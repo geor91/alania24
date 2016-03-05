@@ -6,9 +6,10 @@
 		@include rem(height, 270px);
 		margin: 0;
 		background-repeat: no-repeat;
-		background-position: 0 0;
+		background-position: center;
 		background-size: cover;
 		font-size: 0;
+		overflow: hidden;
 	}
 		.post-image-caption {
 			display: inline-block;
@@ -46,4 +47,18 @@
 			@include rem(font-size, 23px);
 			line-height: 1.2;
 		}
+	&.post-full {
+		.post-title {
+			@include rem(font-size, 32px);
+		}
+		.post-excerpt {
+			padding: 0;
+			@include rem(padding-left, 55px);
+			@include rem(font-size, 20px);
+		}
+		.post-desc {
+			padding: 0;
+			@include rem(font-size, 25px);
+		}
+	}
 }
