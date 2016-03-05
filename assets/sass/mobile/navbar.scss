@@ -27,12 +27,12 @@
 
 	.auth-block {
 		@include font-family(hl);
-		@include font-size(30px);
+		@include rem(font-size, 30px);
 	}
 
 	.nav {
 		@include font-family(hl);
-		@include font-size(23px);
+		@include rem(font-size, 23px);
 
 		.nav-title {
 			@include rem(margin-bottom, 30px);
@@ -47,7 +47,7 @@
 	.categories {
 		text-transform: uppercase;
 		@include font-family(hb);
-		@include font-size(25px);
+		@include rem(font-size, 25px);
 		li {
 			margin-bottom: 20px;
 		}

@@ -37,22 +37,18 @@
 		#{$property}: $px-values;
 		#{$property}: $rem-values;
 	}
-		// font-size shortcut based on rem mixin
-		@mixin font-size($fz) {
-			@include rem(font-size, $fz);
-		}
-
-// CUSTOM COLOR MIXIN
-	@mixin color($color) {
-		color: $color;
-	}
 
 // FONT-FAMILY MIXIN
 	@mixin font-family($font-name) {
 		font-family: $font-name, arial, serif;
 	}
 
-// to percent
-	@function calc-percent($target, $container) {
-		@return ($target / $container) * 100%;
+// DISPLAY TABLE CONTAINER MIXIN
+@mixin table ($valign: top) {
+	display: table;
+	width: 100%;
+	& > * {
+		display: table-cell;
+		vertical-align: $valign;
 	}
+}

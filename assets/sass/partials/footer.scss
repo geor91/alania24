@@ -1,6 +1,6 @@
 footer {
 	position: relative;
-	height: $footer-height;
+	@include rem(height, $footer-height);
 	max-width: 1200px;
 	min-width: 960px;
 	margin: 9px auto 0;
@@ -40,7 +40,7 @@ footer {
 	.copyright {
 		@include rem(margin-bottom, 20px);
 		font-size: 11px;
-		line-height: 13px;
+		line-height: 1.2;
 		color: $color-gray-4;
 	}
 	.social {

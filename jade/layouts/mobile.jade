@@ -1,17 +1,16 @@
 include ../includes/vars.jade
 doctype html
-html
+html.mobile
 	head
-		include ../includes/mobile/head.jade
+		include ../includes/head.jade
 		block head
+			link(rel="stylesheet", href="/assets/css/mobile.css")
 	body
-		.page-container#main-container
+		.m-page-container#main-container
 			include ../includes/mobile/navbar.jade
 			include ../includes/mobile/header.jade
-			.page-content
+			.m-page-content
 				block content
 		include ../includes/mobile/footer.jade
 
 	include ../includes/scripts.jade
-	block scripts
-		script(src="/assets/js/mobile.js")

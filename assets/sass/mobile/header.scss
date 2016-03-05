@@ -25,60 +25,7 @@ header {
 	}
 
 	.logo {
-		text-align: center;
-		img {
-			@include rem(max-width, 303px);
-		}
+		padding: 0;
 	}
 
-}
-.top-nav {
-	margin: 2px 0;
-	border-top: 1px solid rgba(0,0,0, .15);
-	border-bottom: 1px solid rgba(0,0,0, .15);
-	text-align: center;
-	white-space: nowrap;
-
-	ul {
-		font-size: 0;
-	}
-	
-	li {
-		display: inline-block;
-
-		a {
-			position: relative;
-			display: inline-block;
-			@include rem(padding, 11px);
-			border-bottom: 2px solid transparent;
-			@include font-family(hb);
-			@include font-size(17px);
-			text-transform: uppercase;
-			color: $color-blue;
-			transition: color .3s;
-
-			&:before {
-				content: '';
-				position: absolute;
-				top: -11px;
-				left: 0;
-				right: 0;
-				height: 8px;
-				background: #233C54;
-				opacity: 0;
-				transition: opacity .3s;
-			}
-
-			&:hover,
-			&.active {
-				color: darken($color-blue, 5%);
-				color: #233C54;
-				text-decoration: none;
-
-				&:before {
-					opacity: 1;
-				}
-			}
-		}
-	}
 }

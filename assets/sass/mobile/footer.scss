@@ -1,10 +1,8 @@
 footer {
-	position: relative;
-	height: $footer-height;
-	@include rem(padding, 50px);
-	border-top: 2px solid #000;
-	@include font-family(hn);
-	color: $color-gray-4;
+	min-width: auto;
+	@include rem(height, $footer-height-mobile);
+	margin: 0;
+	@include rem(padding, 40px);
 	transition: transform .3s;
 
 	&:before {
@@ -19,10 +17,11 @@ footer {
 	}
 
 	.copyright {
-		@include rem(margin-bottom, 30px);
-		@include rem(font-size, 23px);
+		display: block;
+		margin-bottom: 3rem;
+		@include rem(font-size, 19px);
 		line-height: 1.2;
-		color: $color-gray-4;
+		// color: $color-gray-4;
 	}
 	.social {
 		a {
@@ -37,42 +36,7 @@ footer {
 			}
 		}
 		i.fa {
-			@include rem(font-size, 40px);
-		}
-	}
-	.counters {
-		.item {
-			display: inline-block;
-
-			& + .item {
-				margin-left: 10px;
-			}
-		}
-	}
-
-	.tag-links {
-		a {
-			display: inline-block;
-			position: relative;
-			margin-right: 15px;
-			padding-right: 15px;
-			line-height: 17px;
-
-			&:before {
-				content: '|';
-				position: absolute;
-				top: 0;
-				right: 0;
-			}
-			&:last-child:before {
-				content: none;
-			}
-
-			&:hover {
-				span {
-					color: #666;
-				}
-			}
+			@include rem(font-size, 30px);
 		}
 	}
 }

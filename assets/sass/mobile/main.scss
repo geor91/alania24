@@ -1,12 +1,12 @@
-// common styles
-.page-container {
+.m-page-container {
 	min-height: 100%;
-	margin-bottom: -$footer-height;
+	margin-bottom: -$footer-height-mobile;
 	transition: transform .3s;
 
 	&.expanded {
 		height: 100%;
 		transform: translate(80%);
+		margin-bottom: 13px; // footer:before height
 
 		.navbar-overlay {
 			display: block;
@@ -18,10 +18,10 @@
 	&:after {
 		content: "";
 		display: block;
-		height: $footer-height;
+		height: $footer-height-mobile;
 	}
 }
-.page-content {
+.m-page-content {
 	border-top: 2px solid #000;
 	padding-bottom: 40px;
 }

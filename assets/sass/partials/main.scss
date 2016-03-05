@@ -1,16 +1,15 @@
-// common styles
 .page-wrap {
 	max-width: 1200px;
 	min-height: 100%;
 	margin: 0 auto;
-	margin-bottom: -$footer-height;
+	@include rem(margin-bottom, -$footer-height);
 	@include rem(padding-top, 40px);
 	min-width: 960px;
 
 	&:after {
 		content: "";
 		display: block;
-		height: $footer-height;
+		@include rem(height, $footer-height);
 	}
 }
 

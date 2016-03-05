@@ -1,6 +1,16 @@
-@media screen and (max-width: 639px) {
+@media screen and (min-width: 640px) and (max-width: 800px) {
 	html {
-		font-size: 9px;
+		font-size: 10px;
+	}
+	.post {
+		.post-image{
+			@include rem(height, 370px);
+		}
+	}
+}
+@media screen and (max-width: 640px) {
+	html {
+		// font-size: 10px;
 	}
 }
 @media screen and (max-width: 536px) {

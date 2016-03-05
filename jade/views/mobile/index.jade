@@ -26,7 +26,7 @@ block content
 					.news-title 
 						a(href="#")= newsItem
 
-	.posts-wrap
+	.posts-feed
 		-for (i=0; i<2; i++)
 			.post
 				a.post-image(href="#", style="background-image: url(/assets/images/tmp/posts/1.jpg)")
@@ -51,6 +51,6 @@ block content
 					.post-content
 						p Гомеостаз, согласно традиционным представлениям, сложен. Перцепция иллюстрирует когнитивный генезис, что вызвало развитие поведения.
 	.text-center
-		a.show-more
-			i.fa.fa-angle-down
-			//- i.fa.fa-circle-o-notch.fa-spin
+		a.load-more-btn
+			i.fa.fa-angle-down.button-icon
+			i.fa.fa-circle-o-notch.fa-spin.loading-icon

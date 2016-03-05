@@ -1,4 +1,4 @@
-// блок постов вместе с рекламой
+// container for .post blocks
 .posts-wrap {
 	@include wrap($gutter: 30px);
 

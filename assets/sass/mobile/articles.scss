@@ -4,6 +4,7 @@
 	.post-image {
 		display: block;
 		@include rem(height, 270px);
+		margin: 0;
 		background-repeat: no-repeat;
 		background-position: 0 0;
 		background-size: cover;
@@ -18,91 +19,31 @@
 			line-height: 1.2;
 			color: $color-gray-4;
 		}
-	// обертка для описания новости
+
 	.post-desc {
-		@include rem(margin-top, 20px);
+		@include rem(margin-top, 30px);
 		@include rem(padding, 0 30px);
+		border: 0;
 	}
-		// post meta data
 		.post-meta {
 			@include table(middle);
 			@include rem(margin-bottom, 20px);
 		}
 			.post-rubric {
-				margin-bottom: 8px;
-				@include font-family(hn);
 				@include rem(font-size, 23px);
-				color: $color-blue-2;
 			}
 			.post-date {
-				margin-bottom: 9px;
 				text-align: right;
-				@include font-family(hn);
 				@include rem(font-size, 16px);
 				line-height: 1.2;
-				color: $color-gray-3;
-			}
-			// блок доп инф-ции (напр-р, кол-во комментариев)
-			.post-add-info {
-				margin: 9px 0 15px;
-				@include font-family(hn);
-				font-size: 9px;
-				line-height: 11px;
-				color: $color-blue-2;
-
-				i.fa {
-					margin-right: 12px;
-					font-size: 23px;
-					color: #000;
-					vertical-align: middle;
-				}
-				.item {
-					vertical-align: middle;
-
-					&:hover {
-						i {
-							color: $color-blue-2;
-						}
-					}
-				}
 			}
 
 		.post-title {
-			clear: both;
-			margin-bottom: 16px;
-			@include font-family(hb);
 			@include rem(font-size, 30px);
-			line-height: 1.2;
-			color: #151515;
-			cursor: pointer;
-
-			a {
-				display: block;
-			}
-
-			&:hover {
-				color: $color-blue;
-				a {
-					text-decoration: none;
-				}
-			}
+			line-height: 1.1;
 		}
 		.post-content {
-			color: $color-gray-2;
-
-			p {
-				@include rem(font-size, 23px);
-				line-height: 1.2;
-				color: rgba($color-gray, .89);
-			}
-			p + p {
-				margin-top: 10px;
-			}
+			@include rem(font-size, 23px);
+			line-height: 1.2;
 		}
-	.post-author {
-		@include rem(margin, 20px 0);
-		@include rem(font-size, 14px);
-		line-height: 1.2;
-		color: $color-gray-3;
-	}
 }

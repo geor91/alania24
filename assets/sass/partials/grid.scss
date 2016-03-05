@@ -43,7 +43,7 @@ $wrap-masonry: ();
 			display: inline-block;
 			max-width: 100%;
 			vertical-align: top;
-			@include font-size(14px);
+			@include rem(font-size, 14px);
 		}
 	}
 	@elseif $gutter > 0 {
@@ -63,17 +63,8 @@ $wrap-masonry: ();
 				display: inline-block;
 				max-width: 100%;
 				vertical-align: top;
-				@include font-size(14px);
+				@include rem(font-size, 14px);
 			}
 		}
-	}
-}
-
-// упрощенный аналог xl-table
-@mixin table () {
-	display: table;
-	& > * {
-		display: table-cell;
-		vertical-align: top;
 	}
 }
