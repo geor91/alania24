@@ -53,6 +53,7 @@ a {
 		}
 	}
 }
+
 a, span, p {
 	color: inherit;
 	font: inherit;
@@ -170,9 +171,10 @@ ul {
 	li {
 		position: relative;
 		@include table;
-		@extend .clrfix;
+		// @extend .clrfix;
 	}
-	li + li {
+	li + li,
+	.all-news-btn {
 		@include rem(margin-top, 18px);
 	}
 	.news-date {
@@ -262,21 +264,18 @@ ul.list {
 		@include rem(text-indent, 25px);
 	}
 }
-
 .panel {
 	@include rem(padding, 30px);
 	border: 1px solid $color-gray-5;
 	// box-shadow: 0px 3px 5px rgba(0,0,0, .1);
-
 }
-// dont move into .panel
-.panel-title {
-	@include font-family(hb);
-	@include rem(font-size, 28px);
-	@include rem(margin-bottom, 25px);
-	color: #333;
-}
-
+	// dont move into .panel
+	.panel-title {
+		@include font-family(hb);
+		@include rem(font-size, 28px);
+		@include rem(margin-bottom, 25px);
+		color: #333;
+	}
 .poster {
 	position: relative;
 	font-size: 0;
@@ -349,8 +348,8 @@ ul.list {
 }
 .pagination {
 	width: 100%;
-	@include rem(margin-bottom, 30px);
-	@include rem(padding-top, 20px);
+	// @include rem(margin-bottom, 30px);
+	@include rem(padding, 20px 0);
 	border-top: 1px solid $color-gray-5;
 
 	ul {
@@ -407,5 +406,28 @@ ul.list {
 				border-radius: 0 5px 0 0;
 			}
 		}
+	}
+}
+
+.social-share {
+	@include rem(margin, 25px 0);
+	@include rem(padding, 0 25px 0 170px);
+}
+.social-share-title {
+	margin-bottom: 10px;
+	color: #666;
+	@include font-family(hn);
+}
+.social-share-items a {
+	display: inline-block;
+	margin-right: 1px;
+	padding: 8px 12px;
+	background: $color-blue-2;
+	@include rem(font-size, 20px);
+	color: #fff;
+	transition: all .3s;
+
+	&:hover {
+		background-color: darken($color-blue-2, 15%);
 	}
 }

@@ -3,9 +3,9 @@ footer {
 	@include rem(height, $footer-height);
 	max-width: 1200px;
 	min-width: 960px;
-	margin: 9px auto 0;
+	margin: auto;
 	padding: 25px 0;
-	border-top: 2px solid #000;
+	border-top: $footer-border-width solid #000;
 	@include font-family(hn);
 	color: $color-gray-4;
 	@include wrap();
@@ -14,11 +14,11 @@ footer {
 		content: '';
 		display: block;
 		position: absolute;
+		top: -$footer-before-height;
+		left: 0;
 		width: 100%;
-		top: -13px;
 		height: 1px;
 		background: #D7D7D7;
-		left: 0;
 	}
 
 	.footer-col {
@@ -53,7 +53,7 @@ footer {
 				color: #666;
 			}
 		}
-		i.fa {
+		.fa {
 			font-size: 20px;
 		}
 	}

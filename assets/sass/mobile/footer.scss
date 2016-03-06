@@ -2,41 +2,22 @@ footer {
 	min-width: auto;
 	max-width: 100%;
 	@include rem(height, $footer-height-mobile);
-	margin: 0;
 	@include rem(padding, 40px);
 	transition: transform .3s;
 
-	&:before {
-		content: '';
-		display: block;
-		position: absolute;
-		width: 100%;
-		top: -13px;
-		height: 1px;
-		background: #D7D7D7;
-		left: 0;
-	}
-
 	.copyright {
 		display: block;
-		margin-bottom: 3rem;
+		@include rem(margin-bottom, 30px);
 		@include rem(font-size, 19px);
-		line-height: 1.2;
-		// color: $color-gray-4;
 	}
 	.social {
 		a {
-			display: inline-block;
 			color: #ccc;
-
 			& + a {
 				margin-left: 30px;
 			}
-			&:hover {
-				color: #666;
-			}
 		}
-		i.fa {
+		.fa {
 			@include rem(font-size, 30px);
 		}
 	}

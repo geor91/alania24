@@ -19,7 +19,7 @@
 // @import "flexiblegs";
 
 $syntax: (css); 
-$breakpoint: (xl:"");
+$breakpoint: (xl:"", xs:"(max-width: 640px)");
 $wrap-col:     (1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12); // e.g. xl-4
 $wrap-prop:    (left, center, right); // e.g. xl-center, xl-right
 $col-row:      (1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12); // e.g. xl-7-10

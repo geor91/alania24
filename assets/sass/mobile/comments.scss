@@ -1,5 +1,6 @@
 .comments {
-	padding: 0;
+	@include rem(padding, 0 0 0 40px);
+	@include rem(margin, 40px 0);
 
 	.comments-title {
 		@include rem(font-size, 23px);
@@ -7,6 +8,7 @@
 	.comments-list {
 		li {
 			@include rem(margin-bottom, 35px);
+			@include rem(padding-right, 40px);
 		}
 		.comment-meta {
 			@include rem(font-size, 20px);

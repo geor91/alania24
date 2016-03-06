@@ -82,6 +82,7 @@ textarea {
 	@extend .panel;
 }
 .button {
+	display: inline-block;
 	$button-bg-color: $color-gray;
 	@include rem(padding, 13px 33px);
 	background-color: $button-bg-color;
@@ -113,7 +114,7 @@ textarea {
 // label + input block
 .pair {
 	@include font-family(hn);
-	@include rem(margin-bottom, 5px);
+	@include rem(margin-bottom, 15px);
 
 	label {
 		display: inline-block;
@@ -121,9 +122,9 @@ textarea {
 		@include rem(font-size, 16px);
 		@include rem(margin-bottom, 5px);
 	}
-	& + .pair {
-		@include rem(margin-top, 15px);
-	}
+	// & + .pair {
+	// 	@include rem(margin-top, 15px);
+	// }
 }
 .checkbox {
 	position: relative;
@@ -144,7 +145,7 @@ textarea {
 	}
 	span {
 		display: inline-block;
-		margin-top: 2px;
+		// margin-top: 2px;
 		color: #333;
 
 		&:before {

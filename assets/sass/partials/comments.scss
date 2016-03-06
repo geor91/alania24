@@ -1,5 +1,6 @@
 .comments {
-	@include rem(padding, 0 23px 23px 170px);
+	@include rem(margin, 25px 0);
+	@include rem(padding, 0 25px 0 170px);
 
 	.comments-title {
 		border-bottom: 3px solid $color-gray;

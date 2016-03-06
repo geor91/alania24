@@ -18,13 +18,17 @@
 	&:after {
 		content: "";
 		display: block;
-		// -13px = footer:before top value
-		@include rem(height, $footer-height-mobile + 13);
+		@include rem(height, $footer-height-mobile);
+		padding-top: $footer-before-height - $footer-border-width;
 	}
 }
 .m-page-content {
 	border-top: 2px solid #000;
 	// padding-bottom: 40px;
+}
+.m-post-content {
+	@include rem(padding, 0 40px);
+	@include rem(margin, 40px 0);
 }
 .single-content {
 	@include rem(padding, 40px);

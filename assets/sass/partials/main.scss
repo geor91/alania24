@@ -10,11 +10,12 @@
 		content: "";
 		display: block;
 		@include rem(height, $footer-height);
+		padding-top: $footer-before-height - $footer-border-width;
 	}
 }
 
 .page-container {
-	padding: 25px 0;
+	padding-top: 25px;
 	border-top: 2px solid #000;
 	@extend .clrfix;
 	@include wrap();
